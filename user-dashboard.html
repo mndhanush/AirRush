@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="AirRush User Dashboard - Manage your bookings, waivers, and memberships.">
     <title>User Dashboard | AirRush</title>
-     <link rel="icon" type="image/jpeg" href="Images/WhatsApp Image 2026-06-13 at 11.55.23.jpg">
+    <link rel="icon" type="image/jpeg" href="Images/WhatsApp Image 2026-06-13 at 11.55.23.jpg">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
     
-   <script src="tailwind.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -89,7 +89,7 @@
         /* Utility Buttons for RTL/Dark Mode */
         .utility-btn {
             display: flex; align-items: center; justify-content: center;
-            width: 36px; height: 36px; border-radius: 8px;
+            border-radius: 8px;
             border: 1px solid var(--border-color); background: var(--bg-color);
             color: var(--text-color); font-weight: 600; transition: all 0.2s ease; cursor: pointer;
         }
@@ -143,24 +143,28 @@
         <div class="container mx-auto px-4 md:px-6 lg:px-8 h-full">
             <div class="flex items-center justify-between h-full">
                 
-                <div class="flex items-center gap-3 sm:gap-4 shrink-0">
-                    <button type="button" id="mobile-sidebar-btn" class="text-[var(--text-color)] hover:text-primary text-xl bg-transparent border-0 cursor-pointer md:hidden flex items-center justify-center w-8 h-8">
+                <div class="flex items-center gap-2 xs:gap-3 sm:gap-4 shrink-0">
+                    <button type="button" id="mobile-sidebar-btn" class="text-[var(--text-color)] hover:text-primary text-xl bg-transparent border-0 cursor-pointer md:hidden flex items-center justify-center w-8 h-8 shrink-0">
                         <i class="fas fa-bars"></i>
                     </button>
                     
-                    <a href="index.html" class="flex items-center gap-2 shrink-0">
+                    <a href="index.html" class="flex items-center gap-1.5 sm:gap-2 shrink-0">
                         <div class="w-8 h-8 sm:w-10 sm:h-10 bg-primary rounded-xl flex items-center justify-center text-white shrink-0">
                             <i class="fa-solid fa-bolt text-base sm:text-lg"></i>
                         </div>
-                        <span class="font-serif text-xl sm:text-2xl font-semibold tracking-tight text-[var(--text-color)] whitespace-nowrap">Air<span class="text-primary">Rush</span></span>
+                        <span class="font-serif text-lg xs:text-xl sm:text-2xl font-semibold tracking-tight text-[var(--text-color)] whitespace-nowrap">Air<span class="text-primary">Rush</span></span>
                     </a>
                 </div>
 
-                <div class="flex items-center gap-2 sm:gap-3 shrink-0">
-                    <button type="button" class="rtl-toggle-btn utility-btn text-xs hidden md:flex">RTL</button>
-                    <button type="button" class="theme-toggle utility-btn hidden md:flex"><i class="fas fa-moon text-sm"></i></button>
+                <!-- Toggles moved next to Alex's profile -->
+                <div class="flex items-center gap-3 sm:gap-4 shrink-0">
+                    
+                    <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
+                        <button type="button" class="rtl-toggle-btn utility-btn w-8 h-8 sm:w-9 sm:h-9 text-[10px] font-semibold" title="Toggle RTL">RTL</button>
+                        <button type="button" class="theme-toggle utility-btn w-8 h-8 sm:w-9 sm:h-9" title="Toggle Theme"><i class="fas fa-moon text-xs sm:text-sm"></i></button>
+                    </div>
 
-                    <div class="flex items-center gap-2 sm:gap-3 ltr:ml-1 rtl:mr-1 sm:ltr:ml-2 sm:rtl:mr-2 md:ltr:border-l md:rtl:border-r border-transparent md:border-theme md:ltr:pl-4 md:rtl:pr-4 cursor-pointer group">
+                    <div class="flex items-center gap-2 sm:gap-3 cursor-pointer group ltr:border-l rtl:border-r border-theme ltr:pl-3 rtl:pr-3 sm:ltr:pl-4 sm:rtl:pr-4">
                         <div class="ltr:text-right rtl:text-left hidden md:flex flex-col justify-center">
                             <p class="text-xs sm:text-sm font-semibold text-[var(--text-color)] leading-tight">Alex Rivera</p>
                             <p class="text-[9px] sm:text-[10px] font-semibold uppercase tracking-wider text-primary">Pro Member</p>
@@ -169,6 +173,7 @@
                             <i class="fas fa-user text-xs sm:text-base"></i>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -226,15 +231,6 @@
                     <h4 class="text-[var(--text-color)] font-serif text-base font-semibold mb-1 relative z-10">Refer a Friend</h4>
                     <p class="text-xs text-body-muted mb-3 font-medium relative z-10">Get a free grip pair.</p>
                     <button class="w-full bg-primary/10 hover:bg-primary text-primary hover:text-white text-xs font-semibold py-2 rounded-lg transition-colors border border-primary/20 relative z-10">Invite Now</button>
-                </div>
-
-                <div class="flex md:hidden items-center justify-between gap-3 pt-4 border-t border-theme">
-                    <button type="button" class="rtl-toggle-btn w-full py-2.5 rounded-xl border border-theme bg-[var(--bg-color)] text-[var(--text-color)] font-semibold text-xs hover:border-primary hover:text-primary transition-colors cursor-pointer">
-                        Toggle RTL
-                    </button>
-                    <button type="button" class="theme-toggle w-10 h-10 shrink-0 rounded-xl border border-theme bg-[var(--bg-color)] text-[var(--text-color)] flex items-center justify-center hover:border-primary hover:text-primary transition-colors cursor-pointer">
-                        <i class="fas fa-moon text-sm"></i>
-                    </button>
                 </div>
 
                 <a href="login.html" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-red-500/10 text-red-500 hover:bg-red-500 hover:text-white transition-colors font-semibold text-sm cursor-pointer border border-transparent hover:shadow-md">
@@ -316,8 +312,8 @@
                         </div>
 
                         <div class="mt-8 pt-5 border-t border-theme flex gap-3">
-                            <button class="w-1/2 text-center text-sm font-semibold text-primary hover:text-white hover:bg-primary transition-colors border border-primary py-3 rounded-xl">Reschedule</button>
-                            <button onclick="switchTab(event, 'section-bookings')" class="w-1/2 text-center text-sm font-semibold text-[var(--text-color)] bg-[var(--bg-color)] hover:bg-card border border-theme transition-colors py-3 rounded-xl shadow-sm">View Ticket</button>
+                            <button class="w-1/2 text-center text-sm font-semibold text-primary hover:text-white hover:bg-primary transition-colors border border-primary py-3 rounded-xl cursor-pointer">Reschedule</button>
+                            <button onclick="switchTab(event, 'section-bookings')" class="w-1/2 text-center text-sm font-semibold text-[var(--text-color)] bg-[var(--bg-color)] hover:bg-card border border-theme transition-colors py-3 rounded-xl shadow-sm cursor-pointer">View Ticket</button>
                         </div>
                     </div>
 
