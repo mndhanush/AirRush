@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="AirRush - Defy Gravity. Create Memories. Premium Trampoline Park.">
+    <title>Home 2 | AirRush</title>
+     <link rel="icon" type="image/jpeg" href="Images/WhatsApp Image 2026-06-13 at 11.55.23.jpg">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+    
+  <script src="tailwind.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF6B00',   /* Electric Orange */
+                        secondary: '#00C2FF', /* Neon Blue */
+                        bgLight: '#FFFFFF',
+                        bgDark: '#0A0A0A',    
+                        cardLight: '#F9FAFB',
+                        cardDark: '#171717',
+                        textLight: '#111827',
+                        textDark: '#F9FAFB'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Outfit', 'sans-serif'], 
+                    },
+                    screens: {
+                        'xs': '360px', 
+                        'sm': '390px', 
+                        'md': '768px', 
+                        'lg': '1024px', 
+                        'xl': '1280px', 
+                        '2xl': '1536px', 
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        :root {
+            --bg-color: #FFFFFF;
+            --text-color: #111827;
+            --text-muted: #4B5563;
+            --card-bg: #F9FAFB;
+            --border-color: #E5E7EB;
+            --nav-bg: rgba(255, 255, 255, 0.95);
+            --hover-highlight: #FF6B00;
+        }
+        
+        [data-theme="dark"] {
+            --bg-color: #0A0A0A;
+            --text-color: #F9FAFB;
+            --text-muted: #9CA3AF;
+            --card-bg: #171717;
+            --border-color: #262626;
+            --nav-bg: rgba(10, 10, 10, 0.95);
+            --hover-highlight: #FF6B00;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+            overflow-x: hidden;
+            font-weight: 400; 
+        }
+
+        /* Utility to temporarily disable transitions during RTL switch */
+        .no-transition * {
+            transition: none !important;
+        }
+
+        .text-body-muted { color: var(--text-muted); transition: color 0.3s ease; }
+        .bg-card { background-color: var(--card-bg); border-color: var(--border-color); }
+        .border-theme { border-color: var(--border-color); }
+
+        /* Clean Navbar */
+        .glass-nav {
+            background: var(--nav-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-link {
+            position: relative;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+            color: var(--text-color);
+        }
+        .nav-link:hover, .nav-link.active { color: var(--hover-highlight); }
+
+        /* Dropdowns */
+        .dropdown-menu {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.2s ease;
+        }
+        .group:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            transform: translateX(-100%); 
+            transition: transform 0.3s ease;
+            background-color: var(--bg-color); 
+        }
+        html[dir="rtl"] .mobile-menu {
+            transform: translateX(100%);
+        }
+        .mobile-menu.active { 
+            transform: translateX(0) !important; 
+        }
+        
+        .mobile-dropdown-content {
+            max-height: 0; 
+            overflow: hidden; 
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background-color: var(--card-bg); 
+            border-radius: 8px;
+        }
+        .mobile-dropdown-content.active { 
+            max-height: 300px; 
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            margin: 4px 0; 
+        }
+
+        .dropdown-arrow { transition: transform 0.2s ease; }
+        .mobile-dropdown-btn.active .dropdown-arrow { transform: rotate(180deg); }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-color); }
+        ::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #FF6B00; }
+        
+        /* Clean Utility Buttons */
+        .utility-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-color);
+            color: var(--text-color);
+            font-weight: 600;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        .utility-btn:hover {
+            border-color: var(--hover-highlight);
+            color: var(--hover-highlight);
+            background: var(--card-bg);
+        }
+    </style>
+</head>
+<body class="antialiased font-normal">
+
+    <nav class="fixed w-full top-0 z-[100] glass-nav transition-all duration-300 shadow-sm">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <a href="index.html" class="flex items-center gap-2 shrink-0">
+                    <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white shrink-0">
+                        <i class="fa-solid fa-bolt text-lg"></i>
+                    </div>
+                    <span class="font-serif text-2xl font-semibold tracking-tight text-[var(--text-color)] whitespace-nowrap">Air<span class="text-primary">Rush</span></span>
+                </a>
+
+                <div class="hidden xl:flex items-center justify-center flex-1 space-x-6 rtl:space-x-reverse px-8">
+                    <div class="relative group cursor-pointer py-6 shrink-0">
+                        <span class="nav-link active text-primary flex items-center gap-1 font-semibold">Home <i class="fas fa-chevron-down text-xs ml-1 opacity-70"></i></span>
+                        <div class="dropdown-menu absolute z-50 top-full ltr:left-0 rtl:right-0 mt-[-10px] w-48 bg-[var(--bg-color)] border border-[var(--border-color)] shadow-xl rounded-xl overflow-hidden">
+                            <a href="index.html" class="block px-4 py-3 text-[var(--text-color)] hover:bg-[var(--card-bg)] hover:text-primary transition-colors border-b border-[var(--border-color)] font-medium">Home 1</a>
+                            <a href="home-2.html" class="block px-4 py-3 text-primary bg-primary/5 font-semibold">Home 2</a>
+                        </div>
+                    </div>
+
+                    <a href="about.html" class="nav-link shrink-0 font-semibold">About</a>
+                    <a href="gallery.html" class="nav-link shrink-0 font-semibold">Gallery</a>
+                    <a href="events.html" class="nav-link shrink-0 font-semibold">Events</a>
+                    <a href="safety.html" class="nav-link shrink-0 font-semibold">Safety</a>
+                    <a href="jump-session.html" class="nav-link shrink-0 font-semibold">Jump Session</a>
+                    <a href="pricing.html" class="nav-link shrink-0 font-semibold">Pricing</a>
+                    <a href="faq.html" class="nav-link shrink-0 font-semibold">FAQ</a>
+                    <a href="contact.html" class="nav-link shrink-0 font-semibold">Contact</a>
+
+                    <div class="relative group cursor-pointer py-6 shrink-0">
+                        <span class="nav-link flex items-center gap-1 font-semibold">Dashboard <i class="fas fa-chevron-down text-xs ml-1 opacity-70"></i></span>
+                        <div class="dropdown-menu absolute z-50 top-full ltr:right-0 rtl:left-0 mt-[-10px] w-48 bg-[var(--bg-color)] border border-[var(--border-color)] shadow-xl rounded-xl overflow-hidden">
+                            <a href="user-dashboard.html" class="block px-4 py-3 text-[var(--text-color)] hover:bg-[var(--card-bg)] hover:text-primary transition-colors border-b border-[var(--border-color)] font-medium"><i class="fas fa-user mx-2 opacity-50"></i> User</a>
+                            <a href="admin-dashboard.html" class="block px-4 py-3 text-[var(--text-color)] hover:bg-[var(--card-bg)] hover:text-primary transition-colors font-medium"><i class="fas fa-shield-halved mx-2 opacity-50"></i> Admin</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-3 shrink-0">
+                    <button type="button" class="rtl-toggle-btn utility-btn hidden xl:flex text-xs font-semibold">
+                        RTL
+                    </button>
+
+                    <button type="button" class="theme-toggle utility-btn hidden xl:flex">
+                        <i class="fas fa-moon text-sm"></i>
+                    </button>
+<div class="hidden xl:flex items-center gap-3 shrink-0 ml-2">
+    <a href="login.html" class="bg-secondary text-white px-5 py-2.5 rounded-lg font-medium hover:bg-[#00A3D9] transition-colors text-sm shadow-sm">Log In</a>
+    <a href="register.html" class="bg-primary text-white px-5 py-2.5 rounded-lg font-medium hover:bg-[#E55A00] transition-colors text-sm shadow-sm">Sign Up</a>
+</div>
+
+                    <button type="button" id="mobile-menu-btn" class="utility-btn flex xl:hidden w-10 h-10 bg-[var(--bg-color)] border-0 text-[var(--text-color)]">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="mobile-overlay" class="fixed inset-0 bg-black/60 z-[9998] hidden opacity-0 transition-opacity duration-300"></div>
+    
+    <div id="mobile-menu" class="mobile-menu fixed inset-y-0 ltr:left-0 rtl:right-0 z-[9999] w-[85%] max-w-sm border-r border-theme shadow-2xl flex flex-col h-[100dvh]">
+        <div class="p-5 flex flex-col h-full">
+            
+            <div class="flex items-center justify-between pb-4 border-b border-theme mb-4 shrink-0">
+                <a href="index.html" class="flex items-center gap-2 shrink-0">
+                    <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white shrink-0">
+                        <i class="fa-solid fa-bolt text-xs"></i>
+                    </div>
+                    <span class="font-serif text-xl font-semibold tracking-tight text-[var(--text-color)]">Air<span class="text-primary">Rush</span></span>
+                </a>
+                
+                <div class="flex items-center gap-2 shrink-0">
+                    <button type="button" class="rtl-toggle-btn utility-btn w-8 h-8 text-[10px] font-semibold">RTL</button>
+                    <button type="button" class="theme-toggle utility-btn w-8 h-8"><i class="fas fa-moon text-sm"></i></button>
+                    <button type="button" id="close-mobile-menu" class="w-8 h-8 flex items-center justify-center text-xl text-[var(--text-color)] hover:text-primary transition-colors bg-transparent border-0 cursor-pointer ml-1">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="flex-grow overflow-y-auto pb-4 hide-scrollbar">
+                <div class="mb-2">
+                    <button type="button" class="mobile-dropdown-btn flex items-center justify-between w-full text-left font-serif text-lg py-2 text-primary font-semibold transition-colors cursor-pointer border-0 bg-transparent" onclick="toggleMobileDropdown(this, 'home-mobile')">
+                        <span>Home</span>
+                        <i class="fas fa-chevron-down dropdown-arrow text-sm opacity-70"></i>
+                    </button>
+                    <div id="home-mobile" class="mobile-dropdown-content px-3">
+                        <a href="index.html" class="block py-2 text-sm text-[var(--text-color)] hover:text-primary font-medium transition-colors">Home 1</a>
+                        <a href="home-2.html" class="block py-2 text-sm text-primary font-semibold">Home 2 (Current)</a>
+                    </div>
+                </div>
+                
+                <a href="about.html" class="block font-serif text-lg py-2 font-semibold text-[var(--text-color)] hover:text-primary transition-colors mb-2">About</a>
+                <a href="gallery.html" class="block font-serif text-lg py-2 font-semibold text-[var(--text-color)] hover:text-primary transition-colors mb-2">Gallery</a>
+                <a href="events.html" class="block font-serif text-lg py-2 font-semibold text-[var(--text-color)] hover:text-primary transition-colors mb-2">Events</a>
+                <a href="safety.html" class="block font-serif text-lg py-2 font-semibold text-[var(--text-color)] hover:text-primary transition-colors mb-2">Safety</a>
+                <a href="jump-session.html" class="block font-serif text-lg py-2 font-semibold text-[var(--text-color)] hover:text-primary transition-colors mb-2">Jump Session</a>
+                <a href="pricing.html" class="block font-serif text-lg py-2 font-semibold text-[var(--text-color)] hover:text-primary transition-colors mb-2">Pricing</a>
+                <a href="faq.html" class="block font-serif text-lg py-2 font-semibold text-[var(--text-color)] hover:text-primary transition-colors mb-2">FAQ</a>
+                <a href="contact.html" class="block font-serif text-lg py-2 font-semibold text-[var(--text-color)] hover:text-primary transition-colors mb-2">Contact</a>
+                
+                <div class="mt-2">
+                    <button type="button" class="mobile-dropdown-btn flex items-center justify-between w-full text-left font-serif text-lg py-2 text-[var(--text-color)] font-semibold hover:text-primary transition-colors cursor-pointer border-0 bg-transparent" onclick="toggleMobileDropdown(this, 'dashboard-mobile')">
+                        <span>Dashboard</span>
+                        <i class="fas fa-chevron-down dropdown-arrow text-sm opacity-70"></i>
+                    </button>
+                    <div id="dashboard-mobile" class="mobile-dropdown-content px-3">
+                        <a href="user-dashboard.html" class="block py-2 text-sm text-[var(--text-color)] hover:text-primary font-medium transition-colors"><i class="fas fa-user mr-2 opacity-50 w-4 text-center"></i> User</a>
+                        <a href="admin-dashboard.html" class="block py-2 text-sm text-[var(--text-color)] hover:text-primary font-medium transition-colors"><i class="fas fa-shield mr-2 opacity-50 w-4 text-center"></i> Admin</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-4 mt-2 shrink-0 border-t border-theme flex flex-col gap-3">
+                <a href="login.html" class="bg-secondary/10 border border-secondary/20 text-secondary w-full py-3 rounded-xl font-medium text-base transition-colors hover:bg-secondary hover:text-white flex items-center justify-center shadow-sm">
+                    Log In
+                </a>
+                <a href="register.html" class="bg-primary text-white w-full py-3 rounded-xl font-medium text-base transition-colors hover:bg-[#E55A00] flex items-center justify-center shadow-sm">
+                    Sign Up
+                </a>
+            </div>
+            
+        </div>
+    </div>
+
+    <main class="w-full flex-grow">
+
+        <section class="relative bg-[var(--bg-color)] overflow-hidden border-b border-theme min-h-[100dvh] w-full flex flex-col justify-center pt-28 pb-16 lg:pt-20 lg:pb-0">
+            <div class="container mx-auto px-4 md:px-8 w-full">
+                <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
+                    
+                    <div class="w-full lg:w-1/2 flex flex-col justify-center z-10">
+                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-theme text-sm font-medium text-primary mb-8 w-fit shadow-sm">
+                            <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                            New Wipeout Zone Now Open!
+                        </div>
+                        
+                        <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-semibold text-[var(--text-color)] mb-6 leading-[1.1]">
+                            Take Flight. <br/>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-[#ff913b]">Unleash</span> The Fun.
+                        </h1>
+                        
+                        <p class="text-lg text-body-muted mb-10 max-w-lg font-medium leading-relaxed">
+                            Welcome to the ultimate indoor adrenaline arena. Over 40,000 square feet of interconnected trampolines, foam pits, and ninja courses. 
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row items-center gap-4">
+                            <a href="jump-session.html" class="w-full sm:w-auto bg-primary text-white px-8 py-4 rounded-xl font-medium text-lg hover:bg-[#E55A00] transition-all hover:-translate-y-1 shadow-lg shadow-primary/20 text-center flex items-center justify-center gap-2">
+                                Book Tickets <i class="fas fa-ticket-alt"></i>
+                            </a>
+                            <a href="#video-tour" class="w-full sm:w-auto bg-card border border-theme text-[var(--text-color)] px-8 py-4 rounded-xl font-medium text-lg hover:bg-[var(--border-color)] transition-all flex items-center justify-center gap-2">
+                                <i class="fas fa-play-circle text-primary"></i> Watch Video
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="w-full lg:w-1/2 relative z-10 mt-8 lg:mt-0">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="col-span-1 flex flex-col gap-4">
+                                <div class="w-full aspect-[4/5] rounded-3xl overflow-hidden shadow-xl bg-gray-100 dark:bg-gray-800">
+                                    <img src="Images/kids jumping.jpg" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700" alt="Kids jumping">
+                                </div>
+                                <div class="w-full h-32 rounded-3xl bg-secondary/10 border border-secondary/20 flex flex-col items-center justify-center text-center p-4">
+                                    <i class="fas fa-temperature-empty text-3xl text-secondary mb-2"></i>
+                                    <span class="font-semibold text-[var(--text-color)]">Climate Controlled</span>
+                                </div>
+                            </div>
+                            <div class="col-span-1 flex flex-col gap-4 pt-12">
+                                <div class="w-full h-32 rounded-3xl bg-primary/10 border border-primary/20 flex flex-col items-center justify-center text-center p-4">
+                                    <i class="fas fa-shield-halved text-3xl text-primary mb-2"></i>
+                                    <span class="font-semibold text-[var(--text-color)]">100% Safe Zone</span>
+                                </div>
+                                <div class="w-full aspect-[4/5] rounded-3xl overflow-hidden shadow-xl bg-gray-100 dark:bg-gray-800">
+                                    <img src="Images/Foam Pit.jpg" class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700" alt="Foam Pit">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-primary/5 to-secondary/5 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 lg:py-28 bg-card border-b border-theme">
+            <div class="container mx-auto px-4 md:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-primary font-semibold tracking-widest uppercase text-xs block mb-3">Explore The Park</span>
+                    <h2 class="font-serif text-4xl md:text-5xl font-semibold text-[var(--text-color)] mb-6">Endless Ways To Catch Air</h2>
+                    <p class="text-body-muted text-lg font-medium">Discover zones engineered for massive air, intense challenges, and pure unrestricted fun.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto auto-rows-[250px]">
+                    
+                    <div class="md:col-span-2 lg:col-span-2 row-span-2 relative rounded-3xl overflow-hidden group">
+                        <img src="Images/main arena.jpg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Main Arena">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-8 w-full">
+                            <span class="bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full mb-3 inline-block">Most Popular</span>
+                            <h3 class="text-3xl font-serif font-semibold text-white mb-2">Main Freestyle Arena</h3>
+                            <p class="text-gray-300 font-medium line-clamp-2">Wall-to-wall trampolines perfect for practicing your flips, jumps, and parkour moves.</p>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-1 lg:col-span-2 row-span-1 relative rounded-3xl overflow-hidden group bg-[var(--bg-color)] border border-theme flex items-center justify-center">
+                        <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
+                            <i class="fas fa-basketball-ball text-8xl text-secondary"></i>
+                        </div>
+                        <div class="relative z-10 p-8 w-full">
+                            <h3 class="text-2xl font-serif font-semibold text-[var(--text-color)] mb-2">Slam Dunk Zone</h3>
+                            <p class="text-body-muted font-medium mb-4">Channel your inner pro. Launch high and dunk like a champion on our bouncy courts.</p>
+                            <a href="gallery.html" class="text-secondary font-semibold hover:underline inline-flex items-center gap-2">Explore <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-1 lg:col-span-1 row-span-1 relative rounded-3xl overflow-hidden group">
+                        <img src="Images/Ninja Course.jpg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Ninja Course">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6 w-full">
+                            <h3 class="text-xl font-serif font-semibold text-white mb-1">Ninja Course</h3>
+                            <p class="text-gray-300 text-sm font-medium">Test your agility.</p>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-1 lg:col-span-1 row-span-1 relative rounded-3xl overflow-hidden group">
+                        <img src="Images/Foam Pit.jpg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Foam Pit">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6 w-full">
+                            <h3 class="text-xl font-serif font-semibold text-white mb-1">Giant Foam Pit</h3>
+                            <p class="text-gray-300 text-sm font-medium">Soft landings guaranteed.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="video-tour" class="relative py-24 bg-black overflow-hidden border-b border-theme">
+            <div class="absolute inset-0 z-0">
+                <img src="Images/climate.jpg" alt="Party" class="w-full h-full object-cover opacity-40">
+                <div class="absolute inset-0 bg-gradient-to-r from-black/90 to-black/40"></div>
+            </div>
+
+            <div class="container mx-auto px-4 md:px-8 relative z-10">
+                <div class="max-w-2xl">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary text-white mb-8 shadow-[0_0_30px_rgba(255,107,0,0.5)]">
+                        <i class="fas fa-gift text-2xl"></i>
+                    </div>
+                    <h2 class="font-serif text-4xl md:text-5xl font-semibold text-white mb-6">Host The Most Epic Birthday Party.</h2>
+                    <p class="text-xl text-gray-300 mb-8 font-medium">
+                        Give them a party they'll never forget! Dedicated VIP party rooms, a personal host, pizza, and guaranteed jump times. 
+                    </p>
+                    <div class="flex flex-wrap items-center gap-6">
+                        <a href="events.html" class="bg-white text-black px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-200 transition-colors">
+                            View Party Packages
+                        </a>
+                        <span class="text-white font-medium flex items-center gap-2">
+                            <i class="fas fa-check-circle text-primary"></i> Packages start at $199
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 lg:py-28 bg-[var(--bg-color)] border-b border-theme">
+            <div class="container mx-auto px-4 md:px-8">
+                <div class="flex flex-col md:flex-row items-center gap-16">
+                    
+                    <div class="w-full md:w-1/2">
+                        <span class="text-secondary font-semibold tracking-widest uppercase text-xs block mb-3">Futuristic Fun</span>
+                        <h2 class="font-serif text-4xl md:text-5xl font-semibold text-[var(--text-color)] mb-6">Next-Gen Jump Tech</h2>
+                        <p class="text-body-muted text-lg font-medium mb-8">
+                            We've upgraded the classic trampoline experience with cutting-edge interactive technology. Gamify your jumps and track your stats in real-time.
+                        </p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-card border border-theme flex items-center justify-center text-primary shrink-0 text-xl shadow-sm">
+                                    <i class="fas fa-gamepad"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-semibold text-[var(--text-color)] mb-1">AR Jump Walls</h4>
+                                    <p class="text-body-muted text-sm font-medium">Interact with digital projections as you bounce. Score points by hitting virtual targets projected onto the wall.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-card border border-theme flex items-center justify-center text-secondary shrink-0 text-xl shadow-sm">
+                                    <i class="fas fa-stopwatch"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-semibold text-[var(--text-color)] mb-1">Reaction Light Pods</h4>
+                                    <p class="text-body-muted text-sm font-medium">Test your reflexes on the pro-trampolines with our 360-degree LED reaction training systems.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-card border border-theme flex items-center justify-center text-[#FFB800] shrink-0 text-xl shadow-sm">
+                                    <i class="fas fa-camera-retro"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-semibold text-[var(--text-color)] mb-1">Auto-Track Cameras</h4>
+                                    <p class="text-body-muted text-sm font-medium">Scan your wristband, do your trick, and instantly get a high-def slow-motion video sent to your phone.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-full md:w-1/2">
+                        <div class="relative rounded-3xl overflow-hidden border-4 border-theme shadow-2xl group">
+                            <img src="Images/live tracking.jpg" class="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-105" alt="Tech Trampoline">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                            
+                            <div class="absolute bottom-8 left-8 bg-black/60 backdrop-blur-md border border-white/20 p-4 rounded-2xl text-white">
+                                <div class="text-xs font-semibold text-secondary uppercase mb-1">Current High Score</div>
+                                <div class="text-3xl font-semibold font-serif">14,250 <span class="text-sm font-medium text-gray-300">PTS</span></div>
+                            </div>
+                            
+                            <div class="absolute top-8 right-8 bg-primary text-white text-sm font-semibold px-4 py-2 rounded-full animate-pulse shadow-[0_0_15px_rgba(255,107,0,0.6)]">
+                                Live Tracking Active
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 lg:py-28 bg-[#111111] border-b border-[#222]">
+            <div class="container mx-auto px-4 md:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-primary font-semibold tracking-widest uppercase text-xs block mb-3">Push Your Limits</span>
+                    <h2 class="font-serif text-4xl md:text-5xl font-semibold text-white mb-6">Weekly Challenges</h2>
+                    <p class="text-gray-400 text-lg font-medium">Think you have what it takes? Compete in our weekly parkour and jumping events to secure your spot on the AirRush global leaderboard.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    
+                    <div class="bg-[#1A1A1A] border border-[#333] rounded-3xl p-8 hover:border-primary transition-colors flex flex-col">
+                        <div class="w-14 h-14 rounded-full bg-primary/20 text-primary flex items-center justify-center text-2xl mb-6">
+                            <i class="fas fa-stopwatch"></i>
+                        </div>
+                        <h3 class="text-2xl font-serif font-semibold text-white mb-2">Ninja Speedrun</h3>
+                        <p class="text-gray-400 text-sm font-medium mb-6">Clear the ultimate obstacle course in the fastest time possible.</p>
+                        
+                        <div class="bg-black rounded-xl p-4 mt-auto border border-[#333]">
+                            <div class="flex justify-between items-center mb-2 pb-2 border-b border-[#333]">
+                                <span class="text-primary font-semibold text-sm">#1. Alex J.</span>
+                                <span class="text-white font-mono">00:42.5s</span>
+                            </div>
+                            <div class="flex justify-between items-center mb-2 pb-2 border-b border-[#333]">
+                                <span class="text-gray-400 font-semibold text-sm">#2. Marcus T.</span>
+                                <span class="text-white font-mono">00:44.1s</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-400 font-semibold text-sm">#3. Sam R.</span>
+                                <span class="text-white font-mono">00:45.8s</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#1A1A1A] border border-[#333] rounded-3xl p-8 hover:border-secondary transition-colors flex flex-col relative overflow-hidden transform md:-translate-y-4 shadow-2xl">
+                        <div class="absolute top-0 right-0 bg-secondary text-black text-xs font-semibold px-4 py-1 rounded-bl-xl">HOT EVENT</div>
+                        <div class="w-14 h-14 rounded-full bg-secondary/20 text-secondary flex items-center justify-center text-2xl mb-6">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3 class="text-2xl font-serif font-semibold text-white mb-2">Maximum Hangtime</h3>
+                        <p class="text-gray-400 text-sm font-medium mb-6">Measured by our sensor mats. How long can you stay airborne off the mega tramp?</p>
+                        
+                        <div class="bg-black rounded-xl p-4 mt-auto border border-[#333]">
+                            <div class="flex justify-between items-center mb-2 pb-2 border-b border-[#333]">
+                                <span class="text-secondary font-semibold text-sm">#1. David W.</span>
+                                <span class="text-white font-mono">2.4s</span>
+                            </div>
+                            <div class="flex justify-between items-center mb-2 pb-2 border-b border-[#333]">
+                                <span class="text-gray-400 font-semibold text-sm">#2. Sarah M.</span>
+                                <span class="text-white font-mono">2.1s</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-400 font-semibold text-sm">#3. Chris P.</span>
+                                <span class="text-white font-mono">1.9s</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#1A1A1A] border border-[#333] rounded-3xl p-8 hover:border-primary transition-colors flex flex-col">
+                        <div class="w-14 h-14 rounded-full bg-white/10 text-white flex items-center justify-center text-2xl mb-6">
+                            <i class="fas fa-basketball-ball"></i>
+                        </div>
+                        <h3 class="text-2xl font-serif font-semibold text-white mb-2">Style Dunk</h3>
+                        <p class="text-gray-400 text-sm font-medium mb-6">Voted by staff. Execute the most creative and stylish slam dunk.</p>
+                        
+                        <div class="bg-black rounded-xl p-4 mt-auto border border-[#333]">
+                            <div class="flex justify-between items-center mb-2 pb-2 border-b border-[#333]">
+                                <span class="text-white font-semibold text-sm">#1. Leo V.</span>
+                                <span class="text-primary text-xs"><i class="fas fa-fire"></i> Winner</span>
+                            </div>
+                            <div class="flex justify-between items-center mb-2 pb-2 border-b border-[#333]">
+                                <span class="text-gray-400 font-semibold text-sm">#2. Tyson G.</span>
+                                <span class="text-gray-500 text-xs">Runner up</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-400 font-semibold text-sm">#3. Evan H.</span>
+                                <span class="text-gray-500 text-xs">Finalist</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="text-center mt-12">
+                    <a href="jump-session.html" class="inline-flex bg-primary text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-[#E55A00] transition-colors shadow-lg shadow-primary/20 items-center gap-3">
+                        Join The Competition <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-[var(--bg-color)] relative">
+            <div class="container mx-auto px-4 md:px-8">
+                <div class="bg-gradient-to-r from-primary to-[#ff913b] rounded-3xl p-10 md:p-16 text-center max-w-5xl mx-auto shadow-2xl relative overflow-hidden">
+                    
+                    <div class="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
+                    <div class="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-black/10 rounded-full blur-2xl"></div>
+
+                    <div class="relative z-10">
+                        <h2 class="font-serif text-3xl md:text-5xl font-semibold mb-4 text-white">Get 15% Off Your First Jump!</h2>
+                        <p class="text-white/90 text-lg font-medium mb-8 max-w-xl mx-auto">
+                            Join the AirRush newsletter to receive exclusive discounts, event invites, and priority booking alerts.
+                        </p>
+                        
+                        <form class="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-lg mx-auto">
+                            <input type="email" placeholder="Enter your email address" class="w-full sm:w-auto flex-grow px-6 py-4 rounded-xl text-[var(--text-color)] bg-white border-0 focus:ring-4 focus:ring-white/30 outline-none font-medium placeholder:text-gray-400">
+                            <button type="button" class="w-full sm:w-auto bg-black text-white px-8 py-4 rounded-xl font-semibold hover:bg-gray-800 transition-colors whitespace-nowrap shadow-lg">
+                                Subscribe Now
+                            </button>
+                        </form>
+                        <p class="text-white/70 text-xs mt-4 font-medium">We respect your privacy. No spam, ever.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-[#111111] text-gray-400 pt-20 pb-10">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div>
+                    <a href="index.html" class="flex items-center gap-2 mb-6 shrink-0">
+                        <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white shrink-0">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <span class="font-serif text-2xl font-semibold tracking-tight text-white">Air<span class="text-primary">Rush</span></span>
+                    </a>
+                    <p class="text-sm mb-6 leading-relaxed font-medium">
+                        The premier indoor trampoline park destination. Defy gravity, push limits, and create unforgettable memories.
+                    </p>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-secondary hover:text-white transition-colors text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-white"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-lg mb-6 text-white tracking-wide">Park</h4>
+                    <ul class="space-y-3 font-medium text-sm">
+                        <li><a href="jump-session.html" class="hover:text-primary transition-colors inline-block">Book a Jump</a></li>
+                        <li><a href="pricing.html" class="hover:text-primary transition-colors inline-block">Pricing & Memberships</a></li>
+                        <li><a href="events.html" class="hover:text-primary transition-colors inline-block">Parties & Events</a></li>
+                        <li><a href="gallery.html" class="hover:text-primary transition-colors inline-block">Attractions Gallery</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-lg mb-6 text-white tracking-wide">Information</h4>
+                    <ul class="space-y-3 font-medium text-sm">
+                        <li><a href="safety.html" class="hover:text-primary transition-colors inline-block">Waivers & Safety</a></li>
+                        <li><a href="about.html" class="hover:text-primary transition-colors inline-block">About Us</a></li>
+                        <li><a href="faq.html" class="hover:text-primary transition-colors inline-block">FAQ</a></li>
+                        <li><a href="contact.html" class="hover:text-primary transition-colors inline-block">Contact Support</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-lg mb-6 text-white tracking-wide">Location</h4>
+                    <ul class="space-y-4 text-sm font-medium">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt mt-1 text-primary"></i>
+                            <span>450 Jump Street,<br>Adventure District, NY 10001</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-primary"></i>
+                            <a href="mailto:hello@airrush.com" class="hover:text-white transition-colors">hello@airrush.com</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone text-primary"></i>
+                            <a href="tel:+15559876543" class="hover:text-white transition-colors">+1 (555) 987-6543</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-[#222] pt-8 flex flex-col md:flex-row justify-between items-center text-xs font-medium">
+                <p>&copy; 2026 AirRush. All rights reserved.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="faq.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="faq.html" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Theme Toggle Logic ---
+        const htmlElement = document.documentElement;
+        const themeToggleBtns = document.querySelectorAll('.theme-toggle');
+
+        function updateTheme() {
+            const isDark = htmlElement.classList.contains('dark');
+            htmlElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+            
+            themeToggleBtns.forEach(btn => {
+                const icon = btn.querySelector('i');
+                if (icon) {
+                    if (isDark) {
+                        icon.classList.remove('fa-moon');
+                        icon.classList.add('fa-sun');
+                    } else {
+                        icon.classList.remove('fa-sun');
+                        icon.classList.add('fa-moon');
+                    }
+                }
+            });
+            
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        }
+
+        themeToggleBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation(); // Stop bubbling that might trigger unexpected closures
+                htmlElement.classList.toggle('dark');
+                updateTheme();
+            });
+        });
+
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            htmlElement.classList.add('dark');
+        }
+        updateTheme();
+
+        // --- RTL Toggle Logic ---
+        const rtlToggleBtns = document.querySelectorAll('.rtl-toggle-btn');
+        rtlToggleBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation(); // Prevent bubbling up to the mobile menu overlay logic
+                
+                // Add no-transition class to prevent the menu from sweeping across the screen
+                document.body.classList.add('no-transition');
+                
+                const currentDir = htmlElement.getAttribute('dir');
+                htmlElement.setAttribute('dir', currentDir === 'ltr' ? 'rtl' : 'ltr');
+                
+                // Remove the no-transition class after browser repaints
+                setTimeout(() => {
+                    document.body.classList.remove('no-transition');
+                }, 50);
+            });
+        });
+
+        // --- Navbar Scroll Effect ---
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-md');
+                nav.style.background = 'var(--bg-color)'; 
+            } else {
+                nav.classList.remove('shadow-md');
+                nav.style.background = 'var(--nav-bg)';
+            }
+        });
+
+        // --- Mobile Menu Logic ---
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileOverlay = document.getElementById('mobile-overlay');
+        const closeMobileMenu = document.getElementById('close-mobile-menu');
+
+        function openMobileMenu(e) {
+            if(e) e.preventDefault();
+            mobileMenu.classList.add('active');
+            mobileOverlay.classList.remove('hidden');
+            setTimeout(() => {
+                mobileOverlay.classList.remove('opacity-0');
+                mobileOverlay.classList.add('opacity-100');
+            }, 10);
+            document.body.style.overflow = 'hidden'; 
+        }
+
+        function closeMobileMenuFunc(e) {
+            if(e) e.preventDefault();
+            mobileMenu.classList.remove('active');
+            mobileOverlay.classList.remove('opacity-100');
+            mobileOverlay.classList.add('opacity-0');
+            setTimeout(() => {
+                mobileOverlay.classList.add('hidden');
+            }, 300); 
+            document.body.style.overflow = '';
+            
+            // Close active dropdowns when closing menu
+            document.querySelectorAll('.mobile-dropdown-content.active').forEach(el => {
+                el.classList.remove('active');
+            });
+            document.querySelectorAll('.mobile-dropdown-btn.active').forEach(btn => {
+                btn.classList.remove('active');
+            });
+        }
+
+        if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openMobileMenu);
+        if (closeMobileMenu) closeMobileMenu.addEventListener('click', closeMobileMenuFunc);
+        if (mobileOverlay) mobileOverlay.addEventListener('click', closeMobileMenuFunc);
+
+        // Prevent clicks inside the menu from closing the overlay accidentally
+        mobileMenu.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+
+        // Mobile Dropdowns accordion logic
+        window.toggleMobileDropdown = function(btnElement, targetId) {
+            const targetContent = document.getElementById(targetId);
+            
+            document.querySelectorAll('.mobile-dropdown-content').forEach(el => {
+                if (el.id !== targetId && el.classList.contains('active')) {
+                    el.classList.remove('active');
+                    const prevBtn = document.querySelector(`[onclick="toggleMobileDropdown(this, '${el.id}')"]`);
+                    if(prevBtn) prevBtn.classList.remove('active');
+                }
+            });
+
+            targetContent.classList.toggle('active');
+            btnElement.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

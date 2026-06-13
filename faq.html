@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="AirRush FAQ - Find answers to your questions about tickets, safety, waivers, and parties.">
+    <title>FAQ & Help | AirRush</title>
+     <link rel="icon" type="image/jpeg" href="Images/WhatsApp Image 2026-06-13 at 11.55.23.jpg">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <script src="tailwind.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF6B00',   /* Electric Orange */
+                        secondary: '#00C2FF', /* Neon Blue */
+                        bgLight: '#FFFFFF',
+                        bgDark: '#0A0A0A',    
+                        cardLight: '#F9FAFB',
+                        cardDark: '#171717',
+                        textLight: '#111827',
+                        textDark: '#F9FAFB'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Outfit', 'sans-serif'], 
+                    },
+                    screens: {
+                        'xs': '360px', 'sm': '390px', 'md': '768px', 
+                        'lg': '1024px', 'xl': '1280px', '2xl': '1536px', 
+                    },
+                    animation: {
+                        'gradient-x': 'gradient-x 3s ease infinite',
+                    },
+                    keyframes: {
+                        'gradient-x': {
+                            '0%, 100%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'left center'
+                            },
+                            '50%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'right center'
+                            },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        :root {
+            --bg-color: #FFFFFF;
+            --text-color: #111827;
+            --text-muted: #4B5563;
+            --card-bg: #F9FAFB;
+            --border-color: #E5E7EB;
+            --nav-bg: rgba(255, 255, 255, 0.95);
+            --hover-highlight: #FF6B00;
+        }
+        
+        [data-theme="dark"] {
+            --bg-color: #0A0A0A;
+            --text-color: #F9FAFB;
+            --text-muted: #9CA3AF;
+            --card-bg: #171717;
+            --border-color: #262626;
+            --nav-bg: rgba(10, 10, 10, 0.95);
+            --hover-highlight: #FF6B00;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+            overflow-x: hidden;
+            font-weight: 400; 
+        }
+
+        /* RTL Transition Fix */
+        .no-transition * {
+            transition: none !important;
+        }
+
+        .text-body-muted { color: var(--text-muted); transition: color 0.3s ease; }
+        .bg-card { background-color: var(--card-bg); border-color: var(--border-color); }
+        .border-theme { border-color: var(--border-color); }
+
+        /* Navbar */
+        .glass-nav {
+            background: var(--nav-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-link {
+            position: relative;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+            color: var(--text-color);
+        }
+        .nav-link:hover, .nav-link.active { color: var(--hover-highlight); }
+
+        /* Dropdowns & Mobile */
+        .dropdown-menu { opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.2s ease; }
+        .group:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+        .mobile-menu { transform: translateX(-100%); transition: transform 0.3s ease; background-color: var(--bg-color); }
+        html[dir="rtl"] .mobile-menu { transform: translateX(100%); }
+        .mobile-menu.active { transform: translateX(0) !important; }
+        .mobile-dropdown-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; background-color: var(--card-bg); border-radius: 8px; }
+        .mobile-dropdown-content.active { max-height: 300px; padding-top: 0.5rem; padding-bottom: 0.5rem; margin: 4px 0; }
+        .dropdown-arrow { transition: transform 0.2s ease; }
+        .mobile-dropdown-btn.active .dropdown-arrow { transform: rotate(180deg); }
+
+        /* Utilities */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-color); }
+        ::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #FF6B00; }
+        
+        .utility-btn {
+            display: flex; align-items: center; justify-content: center;
+            width: 36px; height: 36px; border-radius: 8px;
+            border: 1px solid var(--border-color); background: var(--bg-color);
+            color: var(--text-color); font-weight: 600; transition: all 0.2s ease; cursor: pointer;
+        }
+        .utility-btn:hover { border-color: var(--hover-highlight); color: var(--hover-highlight); background: var(--card-bg); }
+
+        /* Accordion transition */
+        .faq-content {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.3s ease;
+        }
+        .faq-content > div {
+            overflow: hidden;
+        }
+        .faq-content.open {
+            grid-template-rows: 1fr;
+        }
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+        .faq-button.open .faq-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="antialiased font-normal">
+
+    <nav class="fixed w-full top-0 z-[100] glass-nav transition-all duration-300 shadow-sm">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <a href="index.html" class="flex items-center gap-2 shrink-0">
+                    <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white shrink-0">
+                        <i class="fa-solid fa-bolt text-lg"></i>
+                    </div>
+                    <span class="font-serif text-2xl font-semibold tracking-tight text-[var(--text-color)] whitespace-nowrap">Air<span class="text-primary">Rush</span></span>
+                </a>
+
+                <div class="hidden xl:flex items-center justify-center flex-1 space-x-6 rtl:space-x-reverse px-8">
+                    <div class="relative group cursor-pointer py-6 shrink-0">
+                        <span class="nav-link flex items-center gap-1 font-semibold">Home <i class="fas fa-chevron-down text-xs ml-1 opacity-70"></i></span>
+                        <div class="dropdown-menu absolute z-50 top-full ltr:left-0 rtl:right-0 mt-[-10px] w-48 bg-[var(--bg-color)] border border-[var(--border-color)] shadow-xl rounded-xl overflow-hidden">
+                            <a href="index.html" class="block px-4 py-3 text-[var(--text-color)] hover:bg-[var(--card-bg)] hover:text-primary transition-colors border-b border-[var(--border-color)] font-medium">Home 1</a>
+                            <a href="home-2.html" class="block px-4 py-3 text-[var(--text-color)] hover:bg-[var(--card-bg)] hover:text-primary transition-colors font-medium">Home 2</a>
+                        </div>
+                    </div>
+
+                    <a href="about.html" class="nav-link shrink-0 font-semibold">About</a>
+                    <a href="gallery.html" class="nav-link shrink-0 font-semibold">Gallery</a>
+                    <a href="events.html" class="nav-link shrink-0 font-semibold">Events</a>
+                    <a href="safety.html" class="nav-link shrink-0 font-semibold">Safety</a>
+                    <a href="jump-session.html" class="nav-link shrink-0 font-semibold">Jump Session</a>
+                    <a href="pricing.html" class="nav-link shrink-0 font-semibold">Pricing</a>
+                    <a href="faq.html" class="nav-link active text-primary shrink-0 font-semibold">FAQ</a>
+                    <a href="contact.html" class="nav-link shrink-0 font-semibold">Contact</a>
+
+                    <div class="relative group cursor-pointer py-6 shrink-0">
+                        <span class="nav-link flex items-center gap-1 font-semibold">Dashboard <i class="fas fa-chevron-down text-xs ml-1 opacity-70"></i></span>
+                        <div class="dropdown-menu absolute z-50 top-full ltr:right-0 rtl:left-0 mt-[-10px] w-48 bg-[var(--bg-color)] border border-[var(--border-color)] shadow-xl rounded-xl overflow-hidden">
+                            <a href="user-dashboard.html" class="block px-4 py-3 text-[var(--text-color)] hover:bg-[var(--card-bg)] hover:text-primary transition-colors border-b border-[var(--border-color)] font-medium"><i class="fas fa-user mx-2 opacity-50"></i> User</a>
+                            <a href="admin-dashboard.html" class="block px-4 py-3 text-[var(--text-color)] hover:bg-[var(--card-bg)] hover:text-primary transition-colors font-medium"><i class="fas fa-shield-halved mx-2 opacity-50"></i> Admin</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-3 shrink-0">
+                    <button type="button" class="rtl-toggle-btn utility-btn hidden xl:flex text-xs font-semibold">RTL</button>
+                    <button type="button" class="theme-toggle utility-btn hidden xl:flex"><i class="fas fa-moon text-sm"></i></button>
+
+                   <div class="hidden xl:flex items-center gap-3 shrink-0 ml-2">
+    <a href="login.html" class="bg-secondary text-white px-5 py-2.5 rounded-lg font-medium hover:bg-[#00A3D9] transition-colors text-sm shadow-sm">Log In</a>
+    <a href="register.html" class="bg-primary text-white px-5 py-2.5 rounded-lg font-medium hover:bg-[#E55A00] transition-colors text-sm shadow-sm">Sign Up</a>
+</div>
+
+                    <button type="button" id="mobile-menu-btn" class="utility-btn flex xl:hidden w-10 h-10 bg-[var(--bg-color)] border-0 text-[var(--text-color)]">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="mobile-overlay" class="fixed inset-0 bg-black/60 z-[9998] hidden opacity-0 transition-opacity duration-300"></div>
+    
+    <div id="mobile-menu" class="mobile-menu fixed inset-y-0 ltr:left-0 rtl:right-0 z-[9999] w-[85%] max-w-sm border-r border-theme shadow-2xl flex flex-col h-[100dvh]">
+        <div class="p-5 flex flex-col h-full">
+            
+            <div class="flex items-center justify-between pb-4 border-b border-theme mb-4 shrink-0">
+                <a href="index.html" class="flex items-center gap-2 shrink-0">
+                    <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white shrink-0"><i class="fa-solid fa-bolt text-xs"></i></div>
+                    <span class="font-serif text-xl font-semibold tracking-tight text-[var(--text-color)]">Air<span class="text-primary">Rush</span></span>
+                </a>
+                
+                <div class="flex items-center gap-2 shrink-0">
+                    <button type="button" class="rtl-toggle-btn utility-btn w-8 h-8 text-[10px] font-semibold">RTL</button>
+                    <button type="button" class="theme-toggle utility-btn w-8 h-8"><i class="fas fa-moon text-sm"></i></button>
+                    <button type="button" id="close-mobile-menu" class="w-8 h-8 flex items-center justify-center text-xl text-[var(--text-color)] hover:text-primary transition-colors bg-transparent border-0 cursor-pointer ml-1">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="flex-grow overflow-y-auto pb-4 hide-scrollbar">
+                <div class="mb-2">
+                    <button type="button" class="mobile-dropdown-btn flex items-center justify-between w-full text-left font-serif text-lg py-2 text-[var(--text-color)] font-semibold transition-colors cursor-pointer border-0 bg-transparent" onclick="toggleMobileDropdown(this, 'home-mobile')">
+                        <span>Home</span>
+                        <i class="fas fa-chevron-down dropdown-arrow text-sm opacity-70"></i>
+                    </button>
+                    <div id="home-mobile" class="mobile-dropdown-content px-3">
+                        <a href="index.html" class="block py-2 text-sm text-[var(--text-color)] hover:text-primary font-medium transition-colors">Home 1</a>
+                        <a href="home-2.html" class="block py-2 text-sm text-[var(--text-color)] hover:text-primary font-medium transition-colors">Home 2</a>
+                    </div>
+                </div>
+                
+                <a href="about.html" class="block font-serif text-lg py-2 font-semibold text-[var(--text-color)] hover:text-primary transition-colors mb-2">About</a>
+                <a href="gallery.html" class="block font-serif text-lg py-2 font-semibold text-[var(--text-color)] hover:text-primary transition-colors mb-2">Gallery</a>
+                <a href="events.html" class="block font-serif text-lg py-2 font-semibold text-[var(--text-color)] hover:text-primary transition-colors mb-2">Events</a>
+                <a href="safety.html" class="block font-serif text-lg py-2 font-semibold text-[var(--text-color)] hover:text-primary transition-colors mb-2">Safety</a>
+                <a href="jump-session.html" class="block font-serif text-lg py-2 font-semibold text-[var(--text-color)] hover:text-primary transition-colors mb-2">Jump Session</a>
+                <a href="pricing.html" class="block font-serif text-lg py-2 font-semibold text-[var(--text-color)] hover:text-primary transition-colors mb-2">Pricing</a>
+                <a href="faq.html" class="block font-serif text-lg py-2 text-primary font-semibold transition-colors mb-2">FAQ (Current)</a>
+                <a href="contact.html" class="block font-serif text-lg py-2 font-semibold text-[var(--text-color)] hover:text-primary transition-colors mb-2">Contact</a>
+                
+                <div class="mt-2">
+                    <button type="button" class="mobile-dropdown-btn flex items-center justify-between w-full text-left font-serif text-lg py-2 text-[var(--text-color)] font-semibold hover:text-primary transition-colors cursor-pointer border-0 bg-transparent" onclick="toggleMobileDropdown(this, 'dashboard-mobile')">
+                        <span>Dashboard</span>
+                        <i class="fas fa-chevron-down dropdown-arrow text-sm opacity-70"></i>
+                    </button>
+                    <div id="dashboard-mobile" class="mobile-dropdown-content px-3">
+                        <a href="user-dashboard.html" class="block py-2 text-sm text-[var(--text-color)] hover:text-primary font-medium transition-colors"><i class="fas fa-user mr-2 opacity-50 w-4 text-center"></i> User</a>
+                        <a href="admin-dashboard.html" class="block py-2 text-sm text-[var(--text-color)] hover:text-primary font-medium transition-colors"><i class="fas fa-shield mr-2 opacity-50 w-4 text-center"></i> Admin</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-4 mt-2 shrink-0 border-t border-theme flex flex-col gap-3">
+                <a href="login.html" class="bg-secondary/10 border border-secondary/20 text-secondary w-full py-3 rounded-xl font-medium text-base transition-colors hover:bg-secondary hover:text-white flex items-center justify-center shadow-sm">
+                    Log In
+                </a>
+                <a href="register.html" class="bg-primary text-white w-full py-3 rounded-xl font-medium text-base transition-colors hover:bg-[#E55A00] flex items-center justify-center shadow-sm">
+                    Sign Up
+                </a>
+            </div>
+            
+        </div>
+    </div>
+
+    <main class="w-full flex-grow">
+
+        <section class="relative min-h-[100dvh] flex flex-col items-center justify-center bg-[#050505] overflow-hidden border-none pt-20">
+            <div class="absolute inset-0 z-0">
+                <img src="Images/faq.jpg" class="w-full h-full object-cover object-center opacity-70" alt="FAQ Background">
+                <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-[#0A0A0A] z-0"></div>
+            </div>
+            
+            <div class="absolute top-1/4 left-1/4 w-72 h-72 bg-primary/20 rounded-full blur-[100px] animate-pulse z-0"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-[120px] animate-pulse z-0" style="animation-delay: 2s;"></div>
+
+            <div class="container mx-auto px-4 relative z-10 text-center flex flex-col items-center justify-center h-full">
+                <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-white font-medium tracking-widest uppercase text-xs mb-6 backdrop-blur-md shadow-[0_0_15px_rgba(255,255,255,0.05)]">
+                    <span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+                    Support Center
+                </span>
+                
+                <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-semibold text-white mb-6 leading-tight max-w-4xl mx-auto drop-shadow-2xl">
+                    How Can We <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-[#ff913b] to-secondary animate-gradient-x">Help?</span>
+                </h1>
+                
+                <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto font-medium mb-12 drop-shadow-md">
+                    Everything you need to know about flying with AirRush. Browse our frequently asked questions below or search for quick answers.
+                </p>
+                
+                <div class="w-full max-w-lg relative mx-auto z-20">
+                    <input type="text" placeholder="Search for answers..." class="w-full pl-14 pr-6 py-5 rounded-2xl bg-[#222]/80 border border-[#444] text-white placeholder:text-gray-400 focus:outline-none focus:border-primary font-medium shadow-lg backdrop-blur-md transition-colors">
+                    <i class="fas fa-search absolute left-6 top-1/2 -translate-y-1/2 text-gray-400 text-lg"></i>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-[var(--bg-color)] border-b border-theme">
+            <div class="container mx-auto px-4 md:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                    
+                    <a href="#general" class="bg-card border border-theme p-8 rounded-2xl flex flex-col items-center text-center shadow-sm hover:border-primary hover:-translate-y-1 transition-all group">
+                        <div class="w-14 h-14 bg-primary/10 text-primary rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-semibold text-[var(--text-color)] mb-2">General Info</h3>
+                        <p class="text-body-muted text-sm font-medium">Tickets, ages, and attire.</p>
+                    </a>
+
+                    <a href="#safety" class="bg-card border border-theme p-8 rounded-2xl flex flex-col items-center text-center shadow-sm hover:border-secondary hover:-translate-y-1 transition-all group">
+                        <div class="w-14 h-14 bg-secondary/10 text-secondary rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:bg-secondary group-hover:text-white transition-colors">
+                            <i class="fas fa-shield-halved"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-semibold text-[var(--text-color)] mb-2">Safety & Rules</h3>
+                        <p class="text-body-muted text-sm font-medium">Waivers, grip socks, and rules.</p>
+                    </a>
+
+                    <a href="#parties" class="bg-card border border-theme p-8 rounded-2xl flex flex-col items-center text-center shadow-sm hover:border-[#FFB800] hover:-translate-y-1 transition-all group">
+                        <div class="w-14 h-14 bg-[#FFB800]/10 text-[#FFB800] rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:bg-[#FFB800] group-hover:text-white transition-colors">
+                            <i class="fas fa-cake-candles"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-semibold text-[var(--text-color)] mb-2">Parties & Events</h3>
+                        <p class="text-body-muted text-sm font-medium">Packages, food, and booking.</p>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="general" class="py-20 bg-card border-b border-theme">
+            <div class="container mx-auto px-4 md:px-8 max-w-4xl">
+                <div class="flex items-center gap-4 mb-10 border-b border-theme pb-4">
+                    <div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center text-xl shrink-0">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <h2 class="font-serif text-3xl font-semibold text-[var(--text-color)]">General Information</h2>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="bg-[var(--bg-color)] border border-theme rounded-2xl overflow-hidden shadow-sm">
+                        <button class="faq-button w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none bg-transparent border-0 cursor-pointer hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+                            <span class="font-serif text-lg font-semibold text-[var(--text-color)]">Do I need to book in advance?</span>
+                            <i class="fas fa-chevron-down text-[var(--text-muted)] faq-icon transition-transform"></i>
+                        </button>
+                        <div class="faq-content">
+                            <div class="px-6 pb-5 pt-0">
+                                <p class="text-body-muted font-medium leading-relaxed border-t border-theme pt-4">
+                                    While walk-ins are welcome, we highly recommend booking your jump session online in advance. Our park frequently reaches capacity, especially on weekends, holidays, and school breaks. Booking online guarantees your spot and saves time at check-in.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-[var(--bg-color)] border border-theme rounded-2xl overflow-hidden shadow-sm">
+                        <button class="faq-button w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none bg-transparent border-0 cursor-pointer hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+                            <span class="font-serif text-lg font-semibold text-[var(--text-color)]">Is there an age limit to jump?</span>
+                            <i class="fas fa-chevron-down text-[var(--text-muted)] faq-icon transition-transform"></i>
+                        </button>
+                        <div class="faq-content">
+                            <div class="px-6 pb-5 pt-0">
+                                <p class="text-body-muted font-medium leading-relaxed border-t border-theme pt-4">
+                                    AirRush is for all ages! If you can walk, you can jump. We have a dedicated "Little Leapers" zone strictly for children under 46 inches tall to ensure they can play safely without older jumpers. However, anyone under 13 must be accompanied by an adult in the facility.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-[var(--bg-color)] border border-theme rounded-2xl overflow-hidden shadow-sm">
+                        <button class="faq-button w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none bg-transparent border-0 cursor-pointer hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+                            <span class="font-serif text-lg font-semibold text-[var(--text-color)]">What should I wear?</span>
+                            <i class="fas fa-chevron-down text-[var(--text-muted)] faq-icon transition-transform"></i>
+                        </button>
+                        <div class="faq-content">
+                            <div class="px-6 pb-5 pt-0">
+                                <p class="text-body-muted font-medium leading-relaxed border-t border-theme pt-4">
+                                    We recommend comfortable athletic clothing that allows you to move freely. Please avoid clothing with sharp objects like studs, large buckles, or zippers that could damage the trampolines. Empty your pockets before jumping. AirRush grip socks are required.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-[var(--bg-color)] border border-theme rounded-2xl overflow-hidden shadow-sm">
+                        <button class="faq-button w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none bg-transparent border-0 cursor-pointer hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+                            <span class="font-serif text-lg font-semibold text-[var(--text-color)]">Do spectators need to pay?</span>
+                            <i class="fas fa-chevron-down text-[var(--text-muted)] faq-icon transition-transform"></i>
+                        </button>
+                        <div class="faq-content">
+                            <div class="px-6 pb-5 pt-0">
+                                <p class="text-body-muted font-medium leading-relaxed border-t border-theme pt-4">
+                                    No, spectators are completely free! Parents and non-jumping guests are welcome to relax in our cafe area, use our free Wi-Fi, and watch from the viewing platforms. You only need a ticket and wristband if you are entering the active jump zones.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="safety" class="py-20 bg-[var(--bg-color)] border-b border-theme">
+            <div class="container mx-auto px-4 md:px-8 max-w-4xl">
+                <div class="flex items-center gap-4 mb-10 border-b border-theme pb-4">
+                    <div class="w-12 h-12 bg-secondary/10 text-secondary rounded-xl flex items-center justify-center text-xl shrink-0">
+                        <i class="fas fa-shield-halved"></i>
+                    </div>
+                    <h2 class="font-serif text-3xl font-semibold text-[var(--text-color)]">Safety & Rules</h2>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="bg-card border border-theme rounded-2xl overflow-hidden shadow-sm">
+                        <button class="faq-button w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none bg-transparent border-0 cursor-pointer hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+                            <span class="font-serif text-lg font-semibold text-[var(--text-color)]">Do I have to sign a waiver?</span>
+                            <i class="fas fa-chevron-down text-[var(--text-muted)] faq-icon transition-transform"></i>
+                        </button>
+                        <div class="faq-content">
+                            <div class="px-6 pb-5 pt-0">
+                                <p class="text-body-muted font-medium leading-relaxed border-t border-theme pt-4">
+                                    Yes, absolutely. A valid liability waiver is legally required for every person entering the jump zones. Jumpers under the age of 18 must have their waiver signed by a parent or legal guardian. Waivers stay on file for exactly one year from the date of signing.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-card border border-theme rounded-2xl overflow-hidden shadow-sm">
+                        <button class="faq-button w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none bg-transparent border-0 cursor-pointer hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+                            <span class="font-serif text-lg font-semibold text-[var(--text-color)]">Why do I need special grip socks?</span>
+                            <i class="fas fa-chevron-down text-[var(--text-muted)] faq-icon transition-transform"></i>
+                        </button>
+                        <div class="faq-content">
+                            <div class="px-6 pb-5 pt-0">
+                                <p class="text-body-muted font-medium leading-relaxed border-t border-theme pt-4">
+                                    Safety and hygiene. Regular socks are extremely slippery on trampoline material, and bare feet are not permitted for sanitary reasons. AirRush grip socks have custom silicone traction strips on the bottom to help you stick your landings. They cost $3.50 and are yours to keep and reuse on future visits.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-card border border-theme rounded-2xl overflow-hidden shadow-sm">
+                        <button class="faq-button w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none bg-transparent border-0 cursor-pointer hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+                            <span class="font-serif text-lg font-semibold text-[var(--text-color)]">What are the main rules of the park?</span>
+                            <i class="fas fa-chevron-down text-[var(--text-muted)] faq-icon transition-transform"></i>
+                        </button>
+                        <div class="faq-content">
+                            <div class="px-6 pb-5 pt-0">
+                                <ul class="list-disc pl-5 text-body-muted font-medium space-y-2 border-t border-theme pt-4">
+                                    <li>Always follow the Jump Guards' instructions.</li>
+                                    <li>One person per trampoline square.</li>
+                                    <li>No double bouncing.</li>
+                                    <li>Do not jump if you are pregnant or have health limitations.</li>
+                                    <li>Always land on both feet or your seated bottom.</li>
+                                    <li>No running across the pads.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="parties" class="py-20 bg-card border-b border-theme">
+            <div class="container mx-auto px-4 md:px-8 max-w-4xl">
+                <div class="flex items-center gap-4 mb-10 border-b border-theme pb-4">
+                    <div class="w-12 h-12 bg-[#FFB800]/10 text-[#FFB800] rounded-xl flex items-center justify-center text-xl shrink-0">
+                        <i class="fas fa-cake-candles"></i>
+                    </div>
+                    <h2 class="font-serif text-3xl font-semibold text-[var(--text-color)]">Parties & Events</h2>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="bg-[var(--bg-color)] border border-theme rounded-2xl overflow-hidden shadow-sm">
+                        <button class="faq-button w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none bg-transparent border-0 cursor-pointer hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+                            <span class="font-serif text-lg font-semibold text-[var(--text-color)]">Can I bring outside food or a birthday cake?</span>
+                            <i class="fas fa-chevron-down text-[var(--text-muted)] faq-icon transition-transform"></i>
+                        </button>
+                        <div class="faq-content">
+                            <div class="px-6 pb-5 pt-0">
+                                <p class="text-body-muted font-medium leading-relaxed border-t border-theme pt-4">
+                                    General admission guests cannot bring outside food or drink. However, if you have booked an official Birthday Party Package and have a reserved party room, you are permitted to bring your own birthday cake, cupcakes, or sealed ice cream.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-[var(--bg-color)] border border-theme rounded-2xl overflow-hidden shadow-sm">
+                        <button class="faq-button w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none bg-transparent border-0 cursor-pointer hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+                            <span class="font-serif text-lg font-semibold text-[var(--text-color)]">When should my party guests arrive?</span>
+                            <i class="fas fa-chevron-down text-[var(--text-muted)] faq-icon transition-transform"></i>
+                        </button>
+                        <div class="faq-content">
+                            <div class="px-6 pb-5 pt-0">
+                                <p class="text-body-muted font-medium leading-relaxed border-t border-theme pt-4">
+                                    We recommend that the host and all guests arrive 15 to 20 minutes prior to your scheduled jump time. This allows enough time to check waivers, hand out grip socks, apply wristbands, and watch the brief safety video without cutting into your jump time.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-[var(--bg-color)] border border-theme rounded-2xl overflow-hidden shadow-sm">
+                        <button class="faq-button w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none bg-transparent border-0 cursor-pointer hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+                            <span class="font-serif text-lg font-semibold text-[var(--text-color)]">What is the party cancellation policy?</span>
+                            <i class="fas fa-chevron-down text-[var(--text-muted)] faq-icon transition-transform"></i>
+                        </button>
+                        <div class="faq-content">
+                            <div class="px-6 pb-5 pt-0">
+                                <p class="text-body-muted font-medium leading-relaxed border-t border-theme pt-4">
+                                    A 50% deposit is required at the time of booking. This deposit is fully refundable up to 14 days prior to your event. Cancellations within 14 days of the event forfeit the deposit, but you may reschedule your party to a new date within 6 months at no additional penalty.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 bg-[var(--bg-color)] relative">
+            <div class="container mx-auto px-4 md:px-8">
+                <div class="max-w-5xl mx-auto bg-card rounded-[2rem] border border-theme shadow-lg overflow-hidden flex flex-col md:flex-row">
+                    
+                    <div class="w-full md:w-5/12 bg-primary p-10 md:p-12 text-white flex flex-col relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl transform translate-x-10 -translate-y-10"></div>
+                        <div class="absolute bottom-0 left-0 w-32 h-32 bg-black/10 rounded-full blur-2xl transform -translate-x-10 translate-y-10"></div>
+                        
+                        <div class="relative z-10">
+                            <h3 class="font-serif text-3xl font-semibold mb-4 text-white">Still stuck?</h3>
+                            <p class="text-white/90 font-medium mb-10 leading-relaxed">
+                                Can't find the answer you're looking for? Send us a direct message and our support team will get back to you within 24 hours.
+                            </p>
+                            
+                            <div class="space-y-6">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center shrink-0">
+                                        <i class="fas fa-envelope text-white"></i>
+                                    </div>
+                                    <div>
+                                        <span class="block text-white/70 text-sm font-medium">Email Support</span>
+                                        <span class="font-semibold text-white">help@airrush.com</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center shrink-0">
+                                        <i class="fas fa-phone text-white"></i>
+                                    </div>
+                                    <div>
+                                        <span class="block text-white/70 text-sm font-medium">Call the Park</span>
+                                        <span class="font-semibold text-white">+1 (555) 987-6543</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-full md:w-7/12 p-10 md:p-12 bg-[var(--bg-color)]">
+                        <form class="space-y-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-semibold text-[var(--text-color)] mb-2">First Name</label>
+                                    <input type="text" class="w-full px-4 py-3 rounded-xl bg-card border border-theme text-[var(--text-color)] focus:outline-none focus:border-primary transition-colors font-medium placeholder:text-gray-400" placeholder="John">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-[var(--text-color)] mb-2">Last Name</label>
+                                    <input type="text" class="w-full px-4 py-3 rounded-xl bg-card border border-theme text-[var(--text-color)] focus:outline-none focus:border-primary transition-colors font-medium placeholder:text-gray-400" placeholder="Doe">
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-semibold text-[var(--text-color)] mb-2">Email Address</label>
+                                <input type="email" class="w-full px-4 py-3 rounded-xl bg-card border border-theme text-[var(--text-color)] focus:outline-none focus:border-primary transition-colors font-medium placeholder:text-gray-400" placeholder="john@example.com">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-semibold text-[var(--text-color)] mb-2">Subject Category</label>
+                                <select class="w-full px-4 py-3 rounded-xl bg-card border border-theme text-[var(--text-color)] focus:outline-none focus:border-primary transition-colors font-medium appearance-none">
+                                    <option value="general">General Inquiry</option>
+                                    <option value="tickets">Ticketing & Pricing</option>
+                                    <option value="parties">Booking a Party</option>
+                                    <option value="feedback">Park Feedback</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-semibold text-[var(--text-color)] mb-2">Your Question</label>
+                                <textarea rows="4" class="w-full px-4 py-3 rounded-xl bg-card border border-theme text-[var(--text-color)] focus:outline-none focus:border-primary transition-colors font-medium placeholder:text-gray-400 resize-none" placeholder="Type your message here..."></textarea>
+                            </div>
+
+                            <button type="button" class="w-full bg-[var(--text-color)] text-[var(--bg-color)] py-4 rounded-xl font-semibold hover:bg-primary hover:text-white transition-colors flex items-center justify-center gap-2">
+                                Send Message <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-[#111111] text-gray-400 pt-20 pb-10">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div>
+                    <a href="index.html" class="flex items-center gap-2 mb-6 shrink-0">
+                        <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white shrink-0">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <span class="font-serif text-2xl font-semibold tracking-tight text-white">Air<span class="text-primary">Rush</span></span>
+                    </a>
+                    <p class="text-sm mb-6 leading-relaxed font-medium">
+                        The premier indoor trampoline park destination. Defy gravity, push limits, and create unforgettable memories.
+                    </p>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-secondary hover:text-white transition-colors text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-white"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-lg mb-6 text-white tracking-wide">Park</h4>
+                    <ul class="space-y-3 font-medium text-sm">
+                        <li><a href="jump-session.html" class="hover:text-primary transition-colors inline-block">Book a Jump</a></li>
+                        <li><a href="pricing.html" class="hover:text-primary transition-colors inline-block">Pricing & Memberships</a></li>
+                        <li><a href="events.html" class="hover:text-primary transition-colors inline-block">Parties & Events</a></li>
+                        <li><a href="gallery.html" class="hover:text-primary transition-colors inline-block">Attractions Gallery</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-lg mb-6 text-white tracking-wide">Information</h4>
+                    <ul class="space-y-3 font-medium text-sm">
+                        <li><a href="safety.html" class="hover:text-primary transition-colors inline-block">Waivers & Safety</a></li>
+                        <li><a href="about.html" class="hover:text-primary transition-colors inline-block">About Us</a></li>
+                        <li><a href="faq.html" class="hover:text-primary transition-colors inline-block text-primary">FAQ</a></li>
+                        <li><a href="contact.html" class="hover:text-primary transition-colors inline-block">Contact Support</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-lg mb-6 text-white tracking-wide">Location</h4>
+                    <ul class="space-y-4 text-sm font-medium">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt mt-1 text-primary"></i>
+                            <span>450 Jump Street,<br>Adventure District, NY 10001</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-primary"></i>
+                            <a href="mailto:hello@airrush.com" class="hover:text-white transition-colors">hello@airrush.com</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone text-primary"></i>
+                            <a href="tel:+15559876543" class="hover:text-white transition-colors">+1 (555) 987-6543</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-[#222] pt-8 flex flex-col md:flex-row justify-between items-center text-xs font-medium">
+                <p>&copy; 2026 AirRush. All rights reserved.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="faq.html" class="hover:text-white transition-colors font-semibold">Privacy Policy</a>
+                    <a href="faq.html" class="hover:text-white transition-colors font-semibold">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Theme Toggle Logic ---
+        const htmlElement = document.documentElement;
+        const themeToggleBtns = document.querySelectorAll('.theme-toggle');
+
+        function updateTheme() {
+            const isDark = htmlElement.classList.contains('dark');
+            htmlElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+            themeToggleBtns.forEach(btn => {
+                const icon = btn.querySelector('i');
+                if (icon) {
+                    if (isDark) {
+                        icon.classList.remove('fa-moon'); icon.classList.add('fa-sun');
+                    } else {
+                        icon.classList.remove('fa-sun'); icon.classList.add('fa-moon');
+                    }
+                }
+            });
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        }
+
+        themeToggleBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault(); e.stopPropagation(); 
+                htmlElement.classList.toggle('dark');
+                updateTheme();
+            });
+        });
+
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            htmlElement.classList.add('dark');
+        }
+        updateTheme();
+
+        // --- RTL Toggle Logic ---
+        const rtlToggleBtns = document.querySelectorAll('.rtl-toggle-btn');
+        rtlToggleBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation(); 
+                
+                document.body.classList.add('no-transition');
+                
+                const currentDir = htmlElement.getAttribute('dir');
+                htmlElement.setAttribute('dir', currentDir === 'ltr' ? 'rtl' : 'ltr');
+                
+                setTimeout(() => {
+                    document.body.classList.remove('no-transition');
+                }, 50);
+            });
+        });
+
+        // --- Navbar Scroll Effect ---
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-md');
+                nav.style.background = 'var(--bg-color)'; 
+            } else {
+                nav.classList.remove('shadow-md');
+                nav.style.background = 'var(--nav-bg)';
+            }
+        });
+
+        // --- Mobile Menu Logic ---
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileOverlay = document.getElementById('mobile-overlay');
+        const closeMobileMenu = document.getElementById('close-mobile-menu');
+
+        function openMobileMenu(e) {
+            if(e) e.preventDefault();
+            mobileMenu.classList.add('active');
+            mobileOverlay.classList.remove('hidden');
+            setTimeout(() => { mobileOverlay.classList.remove('opacity-0'); mobileOverlay.classList.add('opacity-100'); }, 10);
+            document.body.style.overflow = 'hidden'; 
+        }
+
+        function closeMobileMenuFunc(e) {
+            if(e) e.preventDefault();
+            mobileMenu.classList.remove('active');
+            mobileOverlay.classList.remove('opacity-100'); mobileOverlay.classList.add('opacity-0');
+            setTimeout(() => { mobileOverlay.classList.add('hidden'); }, 300); 
+            document.body.style.overflow = '';
+            
+            document.querySelectorAll('.mobile-dropdown-content.active').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.mobile-dropdown-btn.active').forEach(btn => btn.classList.remove('active'));
+        }
+
+        if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openMobileMenu);
+        if (closeMobileMenu) closeMobileMenu.addEventListener('click', closeMobileMenuFunc);
+        if (mobileOverlay) mobileOverlay.addEventListener('click', closeMobileMenuFunc);
+        mobileMenu.addEventListener('click', (e) => e.stopPropagation());
+
+        window.toggleMobileDropdown = function(btnElement, targetId) {
+            const targetContent = document.getElementById(targetId);
+            
+            document.querySelectorAll('.mobile-dropdown-content').forEach(el => {
+                if (el.id !== targetId && el.classList.contains('active')) {
+                    el.classList.remove('active');
+                    const prevBtn = document.querySelector(`[onclick="toggleMobileDropdown(this, '${el.id}')"]`);
+                    if(prevBtn) prevBtn.classList.remove('active');
+                }
+            });
+
+            targetContent.classList.toggle('active');
+            btnElement.classList.toggle('active');
+        }
+
+        // --- FAQ Accordion Logic ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const faqButtons = document.querySelectorAll('.faq-button');
+            
+            faqButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const content = button.nextElementSibling;
+                    const isOpen = button.classList.contains('open');
+                    
+                    // Optional: Close all other accordions (uncomment if you want only one open at a time)
+                    /*
+                    faqButtons.forEach(btn => {
+                        btn.classList.remove('open');
+                        btn.nextElementSibling.classList.remove('open');
+                    });
+                    */
+
+                    if (isOpen) {
+                        button.classList.remove('open');
+                        content.classList.remove('open');
+                    } else {
+                        button.classList.add('open');
+                        content.classList.add('open');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
