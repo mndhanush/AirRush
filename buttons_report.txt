@@ -1,0 +1,1043 @@
+BUTTON ALIGNMENT REPORT
+=========================
+
+
+File: 404.html
+--------------
+  Line 86: <a> "Return to Home"
+    Classes  : "inline-flex items-center justify-center gap-3 bg-primary text-white px-10 py-4 rounded-xl font-semibold text-lg hover:bg-[#E55A00] transition-all duration-300 transform hover:-translate-y-1 shadow-lg shadow-primary/20"
+    Centered?: YES
+    w-full?  : NO
+
+
+File: about.html
+----------------
+  Line 225: <a> "Log In"
+    Classes  : "bg-secondary text-white px-5 py-2.5 rounded-lg font-medium hover:bg-[#00A3D9] transition-colors text-sm shadow-sm"
+    Centered?: NO
+    w-full?  : NO
+
+  Line 226: <a> "Sign Up"
+    Classes  : "bg-primary text-white px-5 py-2.5 rounded-lg font-medium hover:bg-[#E55A00] transition-colors text-sm shadow-sm"
+    Centered?: NO
+    w-full?  : NO
+
+  Line 253: <button> "[Icon/Empty]"
+    Classes  : "w-8 h-8 flex items-center justify-center text-xl text-[var(--text-color)] hover:text-primary transition-colors bg-transparent border-0 cursor-pointer ml-1"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 261: <button> "Home"
+    Classes  : "mobile-dropdown-btn flex items-center justify-between w-full text-left font-serif text-lg py-2 text-[var(--text-color)] font-semibold transition-colors cursor-pointer border-0 bg-transparent"
+    Centered?: NO
+    w-full?  : YES
+
+  Line 281: <button> "Dashboard"
+    Classes  : "mobile-dropdown-btn flex items-center justify-between w-full text-left font-serif text-lg py-2 text-[var(--text-color)] font-semibold hover:text-primary transition-colors cursor-pointer border-0 bg-transparent"
+    Centered?: NO
+    w-full?  : YES
+
+  Line 293: <a> "Log In"
+    Classes  : "bg-secondary/10 border border-secondary/20 text-secondary w-full py-3 rounded-xl font-medium text-base transition-colors hover:bg-secondary hover:text-white flex items-center justify-center shadow-sm"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 296: <a> "Sign Up"
+    Classes  : "bg-primary text-white w-full py-3 rounded-xl font-medium text-base transition-colors hover:bg-[#E55A00] flex items-center justify-center shadow-sm"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 432: <a> "Join Our Team"
+    Classes  : "bg-card border border-theme text-[var(--text-color)] px-6 py-3 rounded-xl font-semibold text-sm hover:border-[var(--text-color)] transition-colors whitespace-nowrap"
+    Centered?: NO
+    w-full?  : NO
+
+  Line 503: <a> "Book Your Jump"
+    Classes  : "w-full sm:w-auto bg-primary text-white px-10 py-5 rounded-xl font-semibold text-lg hover:bg-[#E55A00] transition-colors shadow-[0_0_20px_rgba(255,107,0,0.4)] flex items-center justify-center gap-3"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 506: <a> "Contact Us"
+    Classes  : "w-full sm:w-auto bg-transparent border-2 border-white/20 text-white px-10 py-5 rounded-xl font-semibold text-lg hover:bg-white/10 transition-colors flex items-center justify-center gap-3"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 529: <a> "[Icon/Empty]"
+    Classes  : "w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-white"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 530: <a> "[Icon/Empty]"
+    Classes  : "w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-secondary hover:text-white transition-colors text-white"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 531: <a> "[Icon/Empty]"
+    Classes  : "w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-white"
+    Centered?: YES
+    w-full?  : NO
+
+
+File: admin-dashboard.html
+--------------------------
+  Line 155: <button> "[Icon/Empty]"
+    Classes  : "text-[var(--text-color)] hover:text-primary text-xl bg-transparent border-0 cursor-pointer md:hidden flex items-center justify-center w-8 h-8"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 201: <button> "[Icon/Empty]"
+    Classes  : "w-8 h-8 flex items-center justify-center bg-transparent border-0 text-[var(--text-muted)] hover:text-primary text-xl cursor-pointer"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 242: <button> "Toggle RTL"
+    Classes  : "rtl-toggle-btn w-full py-2.5 rounded-xl border border-theme bg-[var(--bg-color)] text-[var(--text-color)] font-semibold text-xs hover:border-primary hover:text-primary transition-colors cursor-pointer"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 245: <button> "[Icon/Empty]"
+    Classes  : "theme-toggle w-10 h-10 shrink-0 rounded-xl border border-theme bg-[var(--bg-color)] text-[var(--text-color)] flex items-center justify-center hover:border-primary hover:text-primary transition-colors cursor-pointer"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 250: <a> "Logout"
+    Classes  : "flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-red-500/10 text-red-500 hover:bg-red-500 hover:text-white transition-colors font-semibold text-sm cursor-pointer border border-transparent hover:shadow-md"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 265: <button> "Export Daily Report"
+    Classes  : "w-full md:w-auto inline-flex bg-[var(--text-color)] text-[var(--bg-color)] px-6 py-3 rounded-xl font-semibold text-sm hover:opacity-80 transition-colors items-center justify-center gap-2 shadow-md border-0 cursor-pointer"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 340: <button> "View Detailed Heatmap"
+    Classes  : "w-full text-center text-sm font-semibold text-[var(--text-color)] bg-[var(--bg-color)] hover:bg-card border border-theme transition-colors py-3 rounded-xl shadow-sm cursor-pointer"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 375: <button> "Manage Alerts"
+    Classes  : "w-full text-center text-sm font-semibold bg-white text-black hover:bg-gray-200 transition-colors py-3 rounded-xl shadow-lg border-0 cursor-pointer"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 386: <button> "View All"
+    Classes  : "text-primary text-sm font-semibold hover:underline bg-transparent border-0 cursor-pointer"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 464: <button> "Create Walk-in Ticket"
+    Classes  : "bg-[var(--bg-color)] border border-theme hover:border-primary p-4 rounded-2xl flex flex-col items-center text-center transition-colors group cursor-pointer shadow-sm"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 469: <button> "Issue Refund"
+    Classes  : "bg-[var(--bg-color)] border border-theme hover:border-secondary p-4 rounded-2xl flex flex-col items-center text-center transition-colors group cursor-pointer shadow-sm"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 474: <button> "Override Waiver"
+    Classes  : "bg-[var(--bg-color)] border border-theme hover:border-green-500 p-4 rounded-2xl flex flex-col items-center text-center transition-colors group cursor-pointer shadow-sm"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 479: <button> "Park Announcement"
+    Classes  : "bg-[var(--bg-color)] border border-theme hover:border-red-500 p-4 rounded-2xl flex flex-col items-center text-center transition-colors group cursor-pointer shadow-sm"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 496: <button> "Back to Overview"
+    Classes  : "bg-[var(--text-color)] text-[var(--bg-color)] px-6 py-2.5 rounded-xl font-semibold text-sm hover:bg-primary hover:text-white transition-colors border-0 cursor-pointer"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 508: <button> "Back to Overview"
+    Classes  : "bg-primary text-white px-6 py-2.5 rounded-xl font-semibold text-sm hover:bg-[#E55A00] transition-colors shadow-md border-0 cursor-pointer"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 520: <button> "Back to Overview"
+    Classes  : "bg-[var(--text-color)] text-[var(--bg-color)] px-6 py-2.5 rounded-xl font-semibold text-sm hover:opacity-80 transition-colors shadow-md border-0 cursor-pointer"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 532: <button> "Back to Overview"
+    Classes  : "bg-[var(--text-color)] text-[var(--bg-color)] px-6 py-2.5 rounded-xl font-semibold text-sm hover:opacity-80 transition-colors shadow-md border-0 cursor-pointer"
+    Centered?: YES
+    w-full?  : NO
+
+
+File: contact.html
+------------------
+  Line 187: <a> "Log In"
+    Classes  : "bg-secondary text-white px-5 py-2.5 rounded-lg font-medium hover:bg-[#00A3D9] transition-colors text-sm shadow-sm"
+    Centered?: NO
+    w-full?  : NO
+
+  Line 188: <a> "Sign Up"
+    Classes  : "bg-primary text-white px-5 py-2.5 rounded-lg font-medium hover:bg-[#E55A00] transition-colors text-sm shadow-sm"
+    Centered?: NO
+    w-full?  : NO
+
+  Line 215: <button> "[Icon/Empty]"
+    Classes  : "w-8 h-8 flex items-center justify-center text-xl text-[var(--text-color)] hover:text-primary transition-colors bg-transparent border-0 cursor-pointer ml-1"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 223: <button> "Home"
+    Classes  : "mobile-dropdown-btn flex items-center justify-between w-full text-left font-serif text-lg py-2 text-[var(--text-color)] font-semibold transition-colors cursor-pointer border-0 bg-transparent"
+    Centered?: NO
+    w-full?  : YES
+
+  Line 243: <button> "Dashboard"
+    Classes  : "mobile-dropdown-btn flex items-center justify-between w-full text-left font-serif text-lg py-2 text-[var(--text-color)] font-semibold hover:text-primary transition-colors cursor-pointer border-0 bg-transparent"
+    Centered?: NO
+    w-full?  : YES
+
+  Line 255: <a> "Log In"
+    Classes  : "bg-secondary text-white w-full py-3 rounded-xl font-medium text-base transition-colors hover:bg-[#00A3D9] flex items-center justify-center shadow-sm"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 258: <a> "Sign Up"
+    Classes  : "bg-primary text-white w-full py-3 rounded-xl font-medium text-base transition-colors hover:bg-[#E55A00] flex items-center justify-center shadow-sm"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 294: <a> "Send a Message"
+    Classes  : "w-full sm:w-auto flex-1 bg-gradient-to-r from-primary to-[#FF8C00] text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-[0_0_25px_rgba(255,107,0,0.5)] transition-all duration-300 transform hover:-translate-y-1 border-0 flex items-center justify-center gap-2"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 391: <button> "Send Message"
+    Classes  : "w-full bg-primary text-white py-4 rounded-xl font-semibold text-lg hover:bg-[#E55A00] transition-colors flex items-center justify-center gap-2 shadow-lg shadow-primary/20"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 584: <a> "[Icon/Empty]"
+    Classes  : "w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-white"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 585: <a> "[Icon/Empty]"
+    Classes  : "w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-secondary hover:text-white transition-colors text-white"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 586: <a> "[Icon/Empty]"
+    Classes  : "w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-white"
+    Centered?: YES
+    w-full?  : NO
+
+
+File: events.html
+-----------------
+  Line 184: <a> "Log In"
+    Classes  : "bg-secondary text-white px-5 py-2.5 rounded-lg font-medium hover:bg-[#00A3D9] transition-colors text-sm shadow-sm"
+    Centered?: NO
+    w-full?  : NO
+
+  Line 185: <a> "Sign Up"
+    Classes  : "bg-primary text-white px-5 py-2.5 rounded-lg font-medium hover:bg-[#E55A00] transition-colors text-sm shadow-sm"
+    Centered?: NO
+    w-full?  : NO
+
+  Line 212: <button> "[Icon/Empty]"
+    Classes  : "w-8 h-8 flex items-center justify-center text-xl text-[var(--text-color)] hover:text-primary transition-colors bg-transparent border-0 cursor-pointer ml-1"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 220: <button> "Home"
+    Classes  : "mobile-dropdown-btn flex items-center justify-between w-full text-left font-serif text-lg py-2 text-[var(--text-color)] font-semibold transition-colors cursor-pointer border-0 bg-transparent"
+    Centered?: NO
+    w-full?  : YES
+
+  Line 240: <button> "Dashboard"
+    Classes  : "mobile-dropdown-btn flex items-center justify-between w-full text-left font-serif text-lg py-2 text-[var(--text-color)] font-semibold hover:text-primary transition-colors cursor-pointer border-0 bg-transparent"
+    Centered?: NO
+    w-full?  : YES
+
+  Line 252: <a> "Log In"
+    Classes  : "bg-secondary/10 border border-secondary/20 text-secondary w-full py-3 rounded-xl font-medium text-base transition-colors hover:bg-secondary hover:text-white flex items-center justify-center shadow-sm"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 255: <a> "Sign Up"
+    Classes  : "bg-primary text-white w-full py-3 rounded-xl font-medium text-base transition-colors hover:bg-[#E55A00] flex items-center justify-center shadow-sm"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 290: <a> "View Packages"
+    Classes  : "w-full sm:w-auto flex-1 bg-gradient-to-r from-primary to-[#FF8C00] text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-[0_0_25px_rgba(255,107,0,0.5)] transition-all duration-300 transform hover:-translate-y-1 border-0 flex items-center justify-center gap-2"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 293: <a> "Contact Team"
+    Classes  : "w-full sm:w-auto flex-1 bg-white/10 backdrop-blur-xl text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-1 border-0 shadow-[0_4px_15px_rgba(0,0,0,0.2)] flex items-center justify-center gap-2"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 335: <a> "Book a Little Leaper Session"
+    Classes  : "bg-primary text-white px-8 py-4 rounded-xl font-semibold hover:bg-[#E55A00] transition-colors inline-flex items-center justify-center gap-2 shadow-md"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 371: <a> "Get Neon Tickets"
+    Classes  : "bg-secondary text-white px-8 py-4 rounded-xl font-semibold hover:bg-[#00A3D9] transition-colors inline-flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(0,194,255,0.3)]"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 415: <a> "Request a Custom Quote"
+    Classes  : "bg-[var(--text-color)] text-[var(--bg-color)] px-8 py-4 rounded-xl font-semibold hover:bg-secondary hover:text-white transition-colors flex items-center justify-center gap-2 shadow-md"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 439: <a> "Check Availability"
+    Classes  : "bg-black text-white px-10 py-4 rounded-xl font-semibold text-lg hover:bg-gray-800 transition-colors shadow-lg w-full sm:w-auto border-0 flex items-center justify-center gap-2"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 442: <a> "Call to Book"
+    Classes  : "bg-white/10 backdrop-blur-md text-white px-10 py-4 rounded-xl font-semibold text-lg hover:bg-white/20 transition-colors w-full sm:w-auto border-0 flex items-center justify-center gap-2"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 467: <a> "[Icon/Empty]"
+    Classes  : "w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-white"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 468: <a> "[Icon/Empty]"
+    Classes  : "w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-secondary hover:text-white transition-colors text-white"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 469: <a> "[Icon/Empty]"
+    Classes  : "w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-white"
+    Centered?: YES
+    w-full?  : NO
+
+
+File: faq.html
+--------------
+  Line 205: <a> "Log In"
+    Classes  : "bg-secondary text-white px-5 py-2.5 rounded-lg font-medium hover:bg-[#00A3D9] transition-colors text-sm shadow-sm"
+    Centered?: NO
+    w-full?  : NO
+
+  Line 206: <a> "Sign Up"
+    Classes  : "bg-primary text-white px-5 py-2.5 rounded-lg font-medium hover:bg-[#E55A00] transition-colors text-sm shadow-sm"
+    Centered?: NO
+    w-full?  : NO
+
+  Line 231: <button> "[Icon/Empty]"
+    Classes  : "w-8 h-8 flex items-center justify-center text-xl text-[var(--text-color)] hover:text-primary transition-colors bg-transparent border-0 cursor-pointer ml-1"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 239: <button> "Home"
+    Classes  : "mobile-dropdown-btn flex items-center justify-between w-full text-left font-serif text-lg py-2 text-[var(--text-color)] font-semibold transition-colors cursor-pointer border-0 bg-transparent"
+    Centered?: NO
+    w-full?  : YES
+
+  Line 259: <button> "Dashboard"
+    Classes  : "mobile-dropdown-btn flex items-center justify-between w-full text-left font-serif text-lg py-2 text-[var(--text-color)] font-semibold hover:text-primary transition-colors cursor-pointer border-0 bg-transparent"
+    Centered?: NO
+    w-full?  : YES
+
+  Line 271: <a> "Log In"
+    Classes  : "bg-secondary/10 border border-secondary/20 text-secondary w-full py-3 rounded-xl font-medium text-base transition-colors hover:bg-secondary hover:text-white flex items-center justify-center shadow-sm"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 274: <a> "Sign Up"
+    Classes  : "bg-primary text-white w-full py-3 rounded-xl font-medium text-base transition-colors hover:bg-[#E55A00] flex items-center justify-center shadow-sm"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 318: <a> "General Info Tickets, ages, and attire."
+    Classes  : "bg-card border border-theme p-8 rounded-2xl flex flex-col items-center text-center shadow-sm hover:border-primary hover:-translate-y-1 transition-all group"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 326: <a> "Safety & Rules Waivers, grip socks, and rules."
+    Classes  : "bg-card border border-theme p-8 rounded-2xl flex flex-col items-center text-center shadow-sm hover:border-secondary hover:-translate-y-1 transition-all group"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 334: <a> "Parties & Events Packages, food, and booking."
+    Classes  : "bg-card border border-theme p-8 rounded-2xl flex flex-col items-center text-center shadow-sm hover:border-[#FFB800] hover:-translate-y-1 transition-all group"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 357: <button> "Do I need to book in advance?"
+    Classes  : "faq-button w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none bg-transparent border-0 cursor-pointer hover:bg-black/5 dark:hover:bg-white/5 transition-colors"
+    Centered?: NO
+    w-full?  : YES
+
+  Line 371: <button> "Is there an age limit to jump?"
+    Classes  : "faq-button w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none bg-transparent border-0 cursor-pointer hover:bg-black/5 dark:hover:bg-white/5 transition-colors"
+    Centered?: NO
+    w-full?  : YES
+
+  Line 385: <button> "What should I wear?"
+    Classes  : "faq-button w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none bg-transparent border-0 cursor-pointer hover:bg-black/5 dark:hover:bg-white/5 transition-colors"
+    Centered?: NO
+    w-full?  : YES
+
+  Line 399: <button> "Do spectators need to pay?"
+    Classes  : "faq-button w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none bg-transparent border-0 cursor-pointer hover:bg-black/5 dark:hover:bg-white/5 transition-colors"
+    Centered?: NO
+    w-full?  : YES
+
+  Line 426: <button> "Do I have to sign a waiver?"
+    Classes  : "faq-button w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none bg-transparent border-0 cursor-pointer hover:bg-black/5 dark:hover:bg-white/5 transition-colors"
+    Centered?: NO
+    w-full?  : YES
+
+  Line 440: <button> "Why do I need special grip socks?"
+    Classes  : "faq-button w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none bg-transparent border-0 cursor-pointer hover:bg-black/5 dark:hover:bg-white/5 transition-colors"
+    Centered?: NO
+    w-full?  : YES
+
+  Line 454: <button> "What are the main rules of the park?"
+    Classes  : "faq-button w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none bg-transparent border-0 cursor-pointer hover:bg-black/5 dark:hover:bg-white/5 transition-colors"
+    Centered?: NO
+    w-full?  : YES
+
+  Line 486: <button> "Can I bring outside food or a birthday cake?"
+    Classes  : "faq-button w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none bg-transparent border-0 cursor-pointer hover:bg-black/5 dark:hover:bg-white/5 transition-colors"
+    Centered?: NO
+    w-full?  : YES
+
+  Line 500: <button> "When should my party guests arrive?"
+    Classes  : "faq-button w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none bg-transparent border-0 cursor-pointer hover:bg-black/5 dark:hover:bg-white/5 transition-colors"
+    Centered?: NO
+    w-full?  : YES
+
+  Line 514: <button> "What is the party cancellation policy?"
+    Classes  : "faq-button w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none bg-transparent border-0 cursor-pointer hover:bg-black/5 dark:hover:bg-white/5 transition-colors"
+    Centered?: NO
+    w-full?  : YES
+
+  Line 600: <button> "Send Message"
+    Classes  : "w-full bg-[var(--text-color)] text-[var(--bg-color)] py-4 rounded-xl font-semibold hover:bg-primary hover:text-white transition-colors flex items-center justify-center gap-2"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 626: <a> "[Icon/Empty]"
+    Classes  : "w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-white"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 627: <a> "[Icon/Empty]"
+    Classes  : "w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-secondary hover:text-white transition-colors text-white"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 628: <a> "[Icon/Empty]"
+    Classes  : "w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-white"
+    Centered?: YES
+    w-full?  : NO
+
+
+File: gallery.html
+------------------
+  Line 180: <a> "Log In"
+    Classes  : "bg-secondary text-white px-5 py-2.5 rounded-lg font-medium hover:bg-[#00A3D9] transition-colors text-sm shadow-sm"
+    Centered?: NO
+    w-full?  : NO
+
+  Line 181: <a> "Sign Up"
+    Classes  : "bg-primary text-white px-5 py-2.5 rounded-lg font-medium hover:bg-[#E55A00] transition-colors text-sm shadow-sm"
+    Centered?: NO
+    w-full?  : NO
+
+  Line 208: <button> "[Icon/Empty]"
+    Classes  : "w-8 h-8 flex items-center justify-center text-xl text-[var(--text-color)] hover:text-primary transition-colors bg-transparent border-0 cursor-pointer ml-1"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 216: <button> "Home"
+    Classes  : "mobile-dropdown-btn flex items-center justify-between w-full text-left font-serif text-lg py-2 text-[var(--text-color)] font-semibold transition-colors cursor-pointer border-0 bg-transparent"
+    Centered?: NO
+    w-full?  : YES
+
+  Line 236: <button> "Dashboard"
+    Classes  : "mobile-dropdown-btn flex items-center justify-between w-full text-left font-serif text-lg py-2 text-[var(--text-color)] font-semibold hover:text-primary transition-colors cursor-pointer border-0 bg-transparent"
+    Centered?: NO
+    w-full?  : YES
+
+  Line 248: <a> "Log In"
+    Classes  : "bg-secondary/10 border border-secondary/20 text-secondary w-full py-3 rounded-xl font-medium text-base transition-colors hover:bg-secondary hover:text-white flex items-center justify-center shadow-sm"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 251: <a> "Sign Up"
+    Classes  : "bg-primary text-white w-full py-3 rounded-xl font-medium text-base transition-colors hover:bg-[#E55A00] flex items-center justify-center shadow-sm"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 370: <button> "View Full Action Image"
+    Classes  : "bg-[var(--text-color)] text-[var(--bg-color)] px-6 py-3 rounded-xl font-semibold hover:bg-primary hover:text-white transition-colors w-fit flex items-center justify-center gap-2 shadow-md"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 444: <button> "View Spotlight Image"
+    Classes  : "bg-[var(--text-color)] text-[var(--bg-color)] px-6 py-3 rounded-xl font-semibold hover:bg-primary hover:text-white transition-colors flex items-center justify-center gap-2 shadow-md"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 469: <a> "View Pro Event Schedules"
+    Classes  : "inline-flex bg-primary text-white px-8 py-4 rounded-xl font-semibold hover:bg-[#E55A00] transition-colors shadow-[0_0_20px_rgba(255,107,0,0.4)] items-center gap-3"
+    Centered?: NO
+    w-full?  : NO
+
+  Line 479: <button> "&times;"
+    Classes  : "text-white/70 hover:text-primary text-4xl transition-colors ml-auto bg-transparent border-none cursor-pointer"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 501: <a> "[Icon/Empty]"
+    Classes  : "w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-white"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 502: <a> "[Icon/Empty]"
+    Classes  : "w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-secondary hover:text-white transition-colors text-white"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 503: <a> "[Icon/Empty]"
+    Classes  : "w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-white"
+    Centered?: YES
+    w-full?  : NO
+
+
+File: home-2.html
+-----------------
+  Line 223: <a> "Log In"
+    Classes  : "bg-secondary text-white px-5 py-2.5 rounded-lg font-medium hover:bg-[#00A3D9] transition-colors text-sm shadow-sm"
+    Centered?: NO
+    w-full?  : NO
+
+  Line 224: <a> "Sign Up"
+    Classes  : "bg-primary text-white px-5 py-2.5 rounded-lg font-medium hover:bg-[#E55A00] transition-colors text-sm shadow-sm"
+    Centered?: NO
+    w-full?  : NO
+
+  Line 251: <button> "[Icon/Empty]"
+    Classes  : "w-8 h-8 flex items-center justify-center text-xl text-[var(--text-color)] hover:text-primary transition-colors bg-transparent border-0 cursor-pointer ml-1"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 259: <button> "Home"
+    Classes  : "mobile-dropdown-btn flex items-center justify-between w-full text-left font-serif text-lg py-2 text-primary font-semibold transition-colors cursor-pointer border-0 bg-transparent"
+    Centered?: NO
+    w-full?  : YES
+
+  Line 279: <button> "Dashboard"
+    Classes  : "mobile-dropdown-btn flex items-center justify-between w-full text-left font-serif text-lg py-2 text-[var(--text-color)] font-semibold hover:text-primary transition-colors cursor-pointer border-0 bg-transparent"
+    Centered?: NO
+    w-full?  : YES
+
+  Line 291: <a> "Log In"
+    Classes  : "bg-secondary/10 border border-secondary/20 text-secondary w-full py-3 rounded-xl font-medium text-base transition-colors hover:bg-secondary hover:text-white flex items-center justify-center shadow-sm"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 294: <a> "Sign Up"
+    Classes  : "bg-primary text-white w-full py-3 rounded-xl font-medium text-base transition-colors hover:bg-[#E55A00] flex items-center justify-center shadow-sm"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 324: <a> "Book Tickets"
+    Classes  : "w-full sm:w-auto bg-primary text-white px-8 py-4 rounded-xl font-medium text-lg hover:bg-[#E55A00] transition-all hover:-translate-y-1 shadow-lg shadow-primary/20 text-center flex items-center justify-center gap-2"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 327: <a> "Watch Video"
+    Classes  : "w-full sm:w-auto bg-card border border-theme text-[var(--text-color)] px-8 py-4 rounded-xl font-medium text-lg hover:bg-[var(--border-color)] transition-all flex items-center justify-center gap-2"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 430: <a> "View Party Packages"
+    Classes  : "bg-white text-black px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-200 transition-colors"
+    Centered?: NO
+    w-full?  : NO
+
+  Line 586: <a> "Join The Competition"
+    Classes  : "inline-flex bg-primary text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-[#E55A00] transition-colors shadow-lg shadow-primary/20 items-center gap-3"
+    Centered?: NO
+    w-full?  : NO
+
+  Line 608: <button> "Subscribe Now"
+    Classes  : "w-full md:w-auto bg-black text-white px-8 py-4 rounded-xl font-semibold hover:bg-gray-800 transition-colors whitespace-nowrap shadow-lg flex items-center justify-center gap-2"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 634: <a> "[Icon/Empty]"
+    Classes  : "w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-white"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 635: <a> "[Icon/Empty]"
+    Classes  : "w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-secondary hover:text-white transition-colors text-white"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 636: <a> "[Icon/Empty]"
+    Classes  : "w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-white"
+    Centered?: YES
+    w-full?  : NO
+
+
+File: index.html
+----------------
+  Line 224: <a> "Log In"
+    Classes  : "bg-secondary text-white px-5 py-2.5 rounded-lg font-medium hover:bg-[#00A3D9] transition-colors text-sm shadow-sm"
+    Centered?: NO
+    w-full?  : NO
+
+  Line 225: <a> "Sign Up"
+    Classes  : "bg-primary text-white px-5 py-2.5 rounded-lg font-medium hover:bg-[#E55A00] transition-colors text-sm shadow-sm"
+    Centered?: NO
+    w-full?  : NO
+
+  Line 252: <button> "[Icon/Empty]"
+    Classes  : "w-8 h-8 flex items-center justify-center text-xl text-[var(--text-color)] hover:text-primary transition-colors bg-transparent border-0 cursor-pointer ml-1"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 260: <button> "Home"
+    Classes  : "mobile-dropdown-btn flex items-center justify-between w-full text-left font-serif text-lg py-2 text-primary font-medium transition-colors cursor-pointer border-0 bg-transparent"
+    Centered?: NO
+    w-full?  : YES
+
+  Line 280: <button> "Dashboard"
+    Classes  : "mobile-dropdown-btn flex items-center justify-between w-full text-left font-serif text-lg py-2 text-[var(--text-color)] font-semibold hover:text-primary transition-colors cursor-pointer border-0 bg-transparent"
+    Centered?: NO
+    w-full?  : YES
+
+  Line 292: <a> "Log In"
+    Classes  : "bg-secondary/10 border border-secondary/20 text-secondary w-full py-3 rounded-xl font-medium text-base transition-colors hover:bg-secondary hover:text-white flex items-center justify-center shadow-sm"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 295: <a> "Sign Up"
+    Classes  : "bg-primary text-white w-full py-3 rounded-xl font-medium text-base transition-colors hover:bg-[#E55A00] flex items-center justify-center shadow-sm"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 324: <a> "Book Your Jump"
+    Classes  : "w-full sm:w-auto bg-primary text-white px-8 py-4 rounded-xl font-medium text-lg hover:bg-[#E55A00] transition-colors shadow-lg shadow-primary/20 flex items-center justify-center gap-2"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 327: <a> "Explore Park"
+    Classes  : "w-full sm:w-auto bg-white text-black px-8 py-4 rounded-xl font-medium text-lg hover:bg-gray-100 transition-colors flex items-center justify-center gap-2"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 496: <a> "Discover The Park"
+    Classes  : "inline-flex bg-[var(--text-color)] text-[var(--bg-color)] px-8 py-4 rounded-xl font-medium hover:bg-primary hover:text-white transition-colors items-center gap-3"
+    Centered?: NO
+    w-full?  : NO
+
+  Line 517: <a> "Reserve Tickets"
+    Classes  : "bg-white text-primary font-semibold px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors shadow-md text-lg flex items-center justify-center gap-3"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 541: <a> "[Icon/Empty]"
+    Classes  : "w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-white"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 542: <a> "[Icon/Empty]"
+    Classes  : "w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-secondary hover:text-white transition-colors text-white"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 543: <a> "[Icon/Empty]"
+    Classes  : "w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-white"
+    Centered?: YES
+    w-full?  : NO
+
+
+File: jump-session.html
+-----------------------
+  Line 192: <a> "Log In"
+    Classes  : "bg-secondary text-white px-5 py-2.5 rounded-lg font-medium hover:bg-[#00A3D9] transition-colors text-sm shadow-sm"
+    Centered?: NO
+    w-full?  : NO
+
+  Line 193: <a> "Sign Up"
+    Classes  : "bg-primary text-white px-5 py-2.5 rounded-lg font-medium hover:bg-[#E55A00] transition-colors text-sm shadow-sm"
+    Centered?: NO
+    w-full?  : NO
+
+  Line 220: <button> "[Icon/Empty]"
+    Classes  : "w-8 h-8 flex items-center justify-center text-xl text-[var(--text-color)] hover:text-primary transition-colors bg-transparent border-0 cursor-pointer ml-1"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 228: <button> "Home"
+    Classes  : "mobile-dropdown-btn flex items-center justify-between w-full text-left font-serif text-lg py-2 text-[var(--text-color)] font-semibold transition-colors cursor-pointer border-0 bg-transparent"
+    Centered?: NO
+    w-full?  : YES
+
+  Line 248: <button> "Dashboard"
+    Classes  : "mobile-dropdown-btn flex items-center justify-between w-full text-left font-serif text-lg py-2 text-[var(--text-color)] font-semibold hover:text-primary transition-colors cursor-pointer border-0 bg-transparent"
+    Centered?: NO
+    w-full?  : YES
+
+  Line 260: <a> "Log In"
+    Classes  : "bg-secondary/10 border border-secondary/20 text-secondary w-full py-3 rounded-xl font-medium text-base transition-colors hover:bg-secondary hover:text-white flex items-center justify-center shadow-sm"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 263: <a> "Sign Up"
+    Classes  : "bg-primary text-white w-full py-3 rounded-xl font-medium text-base transition-colors hover:bg-[#E55A00] flex items-center justify-center shadow-sm"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 299: <a> "Start Booking"
+    Classes  : "w-full sm:w-auto flex-1 bg-gradient-to-r from-primary to-[#FF8C00] text-white px-10 py-5 rounded-xl font-semibold text-lg hover:shadow-[0_0_25px_rgba(255,107,0,0.5)] transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-3 border-0"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 441: <button> "[Icon/Empty]"
+    Classes  : "w-8 h-8 rounded bg-[var(--bg-color)] border border-theme text-[var(--text-color)] flex items-center justify-center hover:text-primary transition-colors"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 443: <button> "[Icon/Empty]"
+    Classes  : "w-8 h-8 rounded bg-[var(--bg-color)] border border-theme text-[var(--text-color)] flex items-center justify-center hover:text-primary transition-colors"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 449: <button> "[Icon/Empty]"
+    Classes  : "w-8 h-8 rounded bg-[var(--bg-color)] border border-theme text-[var(--text-color)] flex items-center justify-center hover:text-primary transition-colors"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 451: <button> "[Icon/Empty]"
+    Classes  : "w-8 h-8 rounded bg-[var(--bg-color)] border border-theme text-[var(--text-color)] flex items-center justify-center hover:text-primary transition-colors"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 497: <button> "Checkout Securely"
+    Classes  : "w-full bg-primary text-white py-4 rounded-xl font-semibold text-lg hover:bg-[#E55A00] transition-colors shadow-lg shadow-primary/20 flex items-center justify-center gap-2"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 522: <a> "Sign Digital Waiver"
+    Classes  : "inline-flex text-[var(--text-color)] border-2 border-[var(--text-color)] px-6 py-3 rounded-xl font-semibold hover:bg-[var(--text-color)] hover:text-[var(--bg-color)] transition-colors items-center gap-2"
+    Centered?: NO
+    w-full?  : NO
+
+  Line 603: <a> "[Icon/Empty]"
+    Classes  : "w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-white"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 604: <a> "[Icon/Empty]"
+    Classes  : "w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-secondary hover:text-white transition-colors text-white"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 605: <a> "[Icon/Empty]"
+    Classes  : "w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-white"
+    Centered?: YES
+    w-full?  : NO
+
+
+File: login.html
+----------------
+  Line 203: <button> "Sign In"
+    Classes  : "w-full py-3 mt-4 bg-primary text-white hover:bg-[#E55A00] font-semibold uppercase tracking-widest text-xs transition-all duration-300 flex items-center justify-center gap-2 rounded-full shadow-lg shadow-primary/20"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 221: <button> "Google"
+    Classes  : "flex items-center justify-center w-full px-3 py-2.5 border border-theme hover:border-primary transition-colors bg-[var(--bg-color)] rounded-full gap-2 shadow-sm"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 234: <button> "Apple"
+    Classes  : "flex items-center justify-center w-full px-3 py-2.5 border border-theme hover:border-primary transition-colors bg-[var(--bg-color)] rounded-full gap-2 shadow-sm"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 242: <button> "Facebook"
+    Classes  : "flex items-center justify-center w-full px-3 py-2.5 border border-theme hover:border-primary transition-colors bg-[var(--bg-color)] rounded-full gap-2 shadow-sm"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 255: <a> "Sign Up"
+    Classes  : "text-primary hover:text-[#E55A00] transition-colors ms-1 border-b border-primary pb-0.5 font-semibold"
+    Centered?: NO
+    w-full?  : NO
+
+
+File: pricing.html
+------------------
+  Line 192: <a> "Log In"
+    Classes  : "bg-secondary text-white px-5 py-2.5 rounded-lg font-medium hover:bg-[#00A3D9] transition-colors text-sm shadow-sm"
+    Centered?: NO
+    w-full?  : NO
+
+  Line 193: <a> "Sign Up"
+    Classes  : "bg-primary text-white px-5 py-2.5 rounded-lg font-medium hover:bg-[#E55A00] transition-colors text-sm shadow-sm"
+    Centered?: NO
+    w-full?  : NO
+
+  Line 220: <button> "[Icon/Empty]"
+    Classes  : "w-8 h-8 flex items-center justify-center text-xl text-[var(--text-color)] hover:text-primary transition-colors bg-transparent border-0 cursor-pointer ml-1"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 228: <button> "Home"
+    Classes  : "mobile-dropdown-btn flex items-center justify-between w-full text-left font-serif text-lg py-2 text-[var(--text-color)] font-semibold transition-colors cursor-pointer border-0 bg-transparent"
+    Centered?: NO
+    w-full?  : YES
+
+  Line 248: <button> "Dashboard"
+    Classes  : "mobile-dropdown-btn flex items-center justify-between w-full text-left font-serif text-lg py-2 text-[var(--text-color)] font-semibold hover:text-primary transition-colors cursor-pointer border-0 bg-transparent"
+    Centered?: NO
+    w-full?  : YES
+
+  Line 260: <a> "Log In"
+    Classes  : "bg-secondary/10 border border-secondary/20 text-secondary w-full py-3 rounded-xl font-medium text-base transition-colors hover:bg-secondary hover:text-white flex items-center justify-center shadow-sm"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 263: <a> "Sign Up"
+    Classes  : "bg-primary text-white w-full py-3 rounded-xl font-medium text-base transition-colors hover:bg-[#E55A00] flex items-center justify-center shadow-sm"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 298: <a> "View Memberships"
+    Classes  : "w-full sm:w-auto flex-1 bg-gradient-to-r from-primary to-[#FF8C00] text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-[0_0_25px_rgba(255,107,0,0.5)] transition-all duration-300 transform hover:-translate-y-1 border-0 flex items-center justify-center gap-2"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 362: <a> "Buy Tickets Now"
+    Classes  : "inline-flex bg-primary text-white px-8 py-3 rounded-xl font-semibold hover:bg-[#E55A00] transition-colors items-center justify-center gap-2 shadow-md"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 395: <a> "Select Basic"
+    Classes  : "w-full block text-center bg-[var(--bg-color)] border border-theme text-[var(--text-color)] py-3 rounded-xl font-semibold hover:border-primary transition-colors mt-auto shadow-sm"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 416: <a> "Get Pro Pass"
+    Classes  : "w-full block text-center bg-[var(--bg-color)] border border-theme text-[var(--text-color)] py-3 rounded-xl font-semibold hover:border-primary transition-colors mt-auto shadow-sm"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 437: <a> "Select Elite"
+    Classes  : "w-full block text-center bg-[var(--bg-color)] border border-theme text-[var(--text-color)] py-3 rounded-xl font-semibold hover:border-primary transition-colors mt-auto shadow-sm"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 509: <a> "Contact Group Sales"
+    Classes  : "inline-flex bg-white text-black px-6 py-3 rounded-xl font-semibold hover:bg-gray-200 transition-colors items-center justify-center gap-2"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 610: <a> "[Icon/Empty]"
+    Classes  : "w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-white"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 611: <a> "[Icon/Empty]"
+    Classes  : "w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-secondary hover:text-white transition-colors text-white"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 612: <a> "[Icon/Empty]"
+    Classes  : "w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-white"
+    Centered?: YES
+    w-full?  : NO
+
+
+File: register.html
+-------------------
+  Line 220: <button> "Register"
+    Classes  : "w-full py-2.5 mt-1 bg-primary text-white hover:bg-[#E55A00] font-semibold uppercase tracking-widest text-xs transition-all duration-300 flex items-center justify-center gap-2 rounded-full shadow-md shadow-primary/20"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 239: <button> "[Icon/Empty]"
+    Classes  : "flex items-center justify-center w-full py-2.5 border border-theme hover:border-primary transition-colors bg-[var(--bg-color)] rounded-xl shadow-sm"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 252: <button> "[Icon/Empty]"
+    Classes  : "flex items-center justify-center w-full py-2.5 border border-theme hover:border-primary transition-colors bg-[var(--bg-color)] rounded-xl shadow-sm"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 260: <button> "[Icon/Empty]"
+    Classes  : "flex items-center justify-center w-full py-2.5 border border-theme hover:border-primary transition-colors bg-[var(--bg-color)] rounded-xl shadow-sm"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 273: <a> "Sign In"
+    Classes  : "text-primary hover:text-[#E55A00] transition-colors ms-1 border-b border-primary pb-0.5 font-semibold"
+    Centered?: NO
+    w-full?  : NO
+
+
+File: safety.html
+-----------------
+  Line 177: <a> "Log In"
+    Classes  : "bg-secondary text-white px-5 py-2.5 rounded-lg font-medium hover:bg-[#00A3D9] transition-colors text-sm shadow-sm"
+    Centered?: NO
+    w-full?  : NO
+
+  Line 178: <a> "Sign Up"
+    Classes  : "bg-primary text-white px-5 py-2.5 rounded-lg font-medium hover:bg-[#E55A00] transition-colors text-sm shadow-sm"
+    Centered?: NO
+    w-full?  : NO
+
+  Line 205: <button> "[Icon/Empty]"
+    Classes  : "w-8 h-8 flex items-center justify-center text-xl text-[var(--text-color)] hover:text-primary transition-colors bg-transparent border-0 cursor-pointer ml-1"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 213: <button> "Home"
+    Classes  : "mobile-dropdown-btn flex items-center justify-between w-full text-left font-serif text-lg py-2 text-[var(--text-color)] font-semibold transition-colors cursor-pointer border-0 bg-transparent"
+    Centered?: NO
+    w-full?  : YES
+
+  Line 233: <button> "Dashboard"
+    Classes  : "mobile-dropdown-btn flex items-center justify-between w-full text-left font-serif text-lg py-2 text-[var(--text-color)] font-semibold hover:text-primary transition-colors cursor-pointer border-0 bg-transparent"
+    Centered?: NO
+    w-full?  : YES
+
+  Line 245: <a> "Log In"
+    Classes  : "bg-secondary/10 border border-secondary/20 text-secondary w-full py-3 rounded-xl font-medium text-base transition-colors hover:bg-secondary hover:text-white flex items-center justify-center shadow-sm"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 248: <a> "Sign Up"
+    Classes  : "bg-primary text-white w-full py-3 rounded-xl font-medium text-base transition-colors hover:bg-[#E55A00] flex items-center justify-center shadow-sm"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 360: <a> "Sign Digital Waiver"
+    Classes  : "inline-flex bg-primary text-white px-8 py-4 rounded-xl font-semibold hover:bg-[#E55A00] transition-colors items-center justify-center gap-3 shadow-md"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 502: <a> "Sign Waiver"
+    Classes  : "bg-black text-white px-10 py-4 rounded-xl font-semibold text-lg hover:bg-gray-800 transition-colors shadow-lg w-full sm:w-auto flex items-center justify-center gap-2"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 505: <a> "Book Tickets"
+    Classes  : "bg-white/20 backdrop-blur-md border border-white/30 text-white px-10 py-4 rounded-xl font-semibold text-lg hover:bg-white/30 transition-colors w-full sm:w-auto flex items-center justify-center gap-2"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 530: <a> "[Icon/Empty]"
+    Classes  : "w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-white"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 531: <a> "[Icon/Empty]"
+    Classes  : "w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-secondary hover:text-white transition-colors text-white"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 532: <a> "[Icon/Empty]"
+    Classes  : "w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-white"
+    Centered?: YES
+    w-full?  : NO
+
+
+File: user-dashboard.html
+-------------------------
+  Line 147: <button> "[Icon/Empty]"
+    Classes  : "text-[var(--text-color)] hover:text-primary text-xl bg-transparent border-0 cursor-pointer md:hidden flex items-center justify-center w-8 h-8"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 193: <button> "[Icon/Empty]"
+    Classes  : "w-8 h-8 flex items-center justify-center bg-transparent border-0 text-[var(--text-muted)] hover:text-primary text-xl cursor-pointer"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 228: <button> "Invite Now"
+    Classes  : "w-full bg-primary/10 hover:bg-primary text-primary hover:text-white text-xs font-semibold py-2 rounded-lg transition-colors border border-primary/20 relative z-10"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 232: <button> "Toggle RTL"
+    Classes  : "rtl-toggle-btn w-full py-2.5 rounded-xl border border-theme bg-[var(--bg-color)] text-[var(--text-color)] font-semibold text-xs hover:border-primary hover:text-primary transition-colors cursor-pointer"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 235: <button> "[Icon/Empty]"
+    Classes  : "theme-toggle w-10 h-10 shrink-0 rounded-xl border border-theme bg-[var(--bg-color)] text-[var(--text-color)] flex items-center justify-center hover:border-primary hover:text-primary transition-colors cursor-pointer"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 240: <a> "Logout"
+    Classes  : "flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-red-500/10 text-red-500 hover:bg-red-500 hover:text-white transition-colors font-semibold text-sm cursor-pointer border border-transparent hover:shadow-md"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 255: <a> "Book New Jump"
+    Classes  : "w-full md:w-auto inline-flex bg-primary text-white px-6 py-3 rounded-xl font-semibold text-sm hover:bg-[#E55A00] transition-colors items-center justify-center gap-2 shadow-md shadow-primary/20"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 319: <button> "Reschedule"
+    Classes  : "w-1/2 text-center text-sm font-semibold text-primary hover:text-white hover:bg-primary transition-colors border border-primary py-3 rounded-xl"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 320: <button> "View Ticket"
+    Classes  : "w-1/2 text-center text-sm font-semibold text-[var(--text-color)] bg-[var(--bg-color)] hover:bg-card border border-theme transition-colors py-3 rounded-xl shadow-sm"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 356: <button> "Manage Membership"
+    Classes  : "w-full text-center text-sm font-semibold bg-white text-black hover:bg-gray-200 transition-colors py-4 rounded-xl shadow-lg border-0 cursor-pointer"
+    Centered?: YES
+    w-full?  : YES
+
+  Line 446: <button> "Upgrade Plan"
+    Classes  : "bg-primary text-white px-6 py-2.5 rounded-xl font-semibold text-sm hover:bg-[#E55A00] border-0 cursor-pointer shadow-md"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 447: <button> "Cancel"
+    Classes  : "bg-[var(--bg-color)] text-[var(--text-color)] border border-theme px-6 py-2.5 rounded-xl font-semibold text-sm hover:bg-card cursor-pointer"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 455: <button> "Update Payment Method"
+    Classes  : "text-secondary text-sm font-semibold hover:underline border-0 bg-transparent cursor-pointer"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 479: <button> "View PDF"
+    Classes  : "text-[var(--text-color)] bg-card border border-theme px-4 py-2 rounded-lg text-xs font-semibold hover:border-primary transition-colors cursor-pointer"
+    Centered?: YES
+    w-full?  : NO
+
+  Line 493: <a> "Sign Now"
+    Classes  : "text-red-500 bg-red-500/10 border border-red-500/20 px-4 py-2 rounded-lg text-xs font-semibold hover:bg-red-500 hover:text-white transition-colors cursor-pointer"
+    Centered?: NO
+    w-full?  : NO
+
+  Line 522: <button> "Save Profile Details"
+    Classes  : "bg-primary text-white px-8 py-3.5 rounded-xl font-semibold text-sm hover:bg-[#E55A00] transition-colors shadow-md border-0 cursor-pointer"
+    Centered?: YES
+    w-full?  : NO
+

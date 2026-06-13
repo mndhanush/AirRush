@@ -165,11 +165,11 @@
                 </div>
 
                 <div class="flex items-center gap-2 sm:gap-3 shrink-0">
-                    <button type="button" class="rtl-toggle-btn utility-btn text-xs hidden sm:flex">RTL</button>
-                    <button type="button" class="theme-toggle utility-btn hidden sm:flex"><i class="fas fa-moon text-sm"></i></button>
+                    <button type="button" class="rtl-toggle-btn utility-btn text-xs hidden md:flex">RTL</button>
+                    <button type="button" class="theme-toggle utility-btn hidden md:flex"><i class="fas fa-moon text-sm"></i></button>
 
-                    <div class="flex items-center gap-2 sm:gap-3 ltr:ml-1 rtl:mr-1 sm:ltr:ml-2 sm:rtl:mr-2 ltr:border-l rtl:border-r border-theme ltr:pl-2 rtl:pr-2 sm:ltr:pl-4 sm:rtl:pr-4 cursor-pointer group">
-                        <div class="ltr:text-right rtl:text-left flex flex-col justify-center">
+                    <div class="flex items-center gap-2 sm:gap-3 ltr:ml-1 rtl:mr-1 sm:ltr:ml-2 sm:rtl:mr-2 md:ltr:border-l md:rtl:border-r border-transparent md:border-theme md:ltr:pl-4 md:rtl:pr-4 cursor-pointer group">
+                        <div class="ltr:text-right rtl:text-left hidden md:flex flex-col justify-center">
                             <p class="text-xs sm:text-sm font-semibold text-[var(--text-color)] leading-tight">Sarah Lin</p>
                             <p class="text-[9px] sm:text-[10px] font-semibold uppercase tracking-wider text-secondary">Park Manager</p>
                         </div>
@@ -238,7 +238,7 @@
                     <p class="text-xs text-body-muted font-medium relative z-10">POS & Check-in nominal.</p>
                 </div>
 
-                <div class="flex sm:hidden items-center justify-between gap-3 pt-4 border-t border-theme">
+                <div class="flex md:hidden items-center justify-between gap-3 pt-4 border-t border-theme">
                     <button type="button" class="rtl-toggle-btn w-full py-2.5 rounded-xl border border-theme bg-[var(--bg-color)] text-[var(--text-color)] font-semibold text-xs hover:border-primary hover:text-primary transition-colors cursor-pointer">
                         Toggle RTL
                     </button>
@@ -257,17 +257,17 @@
             
             <div id="section-overview" class="page-section block animate-fade-in-up space-y-8 max-w-7xl mx-auto pb-12">
                 
-                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-theme pb-6">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-theme pb-6">
                     <div>
                         <h1 class="font-serif text-3xl md:text-4xl font-semibold text-[var(--text-color)] mb-1">Command Center</h1>
                         <p class="text-body-muted text-sm font-medium uppercase tracking-widest">Live operations overview for AirRush NY.</p>
                     </div>
-                    <button class="inline-flex bg-[var(--text-color)] text-[var(--bg-color)] px-6 py-3 rounded-xl font-semibold text-sm hover:opacity-80 transition-colors items-center justify-center gap-2 shadow-md border-0 cursor-pointer">
+                    <button class="w-full md:w-auto inline-flex bg-[var(--text-color)] text-[var(--bg-color)] px-6 py-3 rounded-xl font-semibold text-sm hover:opacity-80 transition-colors items-center justify-center gap-2 shadow-md border-0 cursor-pointer">
                         <i class="fas fa-file-export"></i> Export Daily Report
                     </button>
                 </div>
 
-                <section class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div class="bg-card border border-theme p-6 rounded-3xl shadow-sm hover:border-green-500 transition-colors group">
                         <div class="flex justify-between items-start mb-6">
                             <div class="text-green-500 text-xs font-semibold uppercase tracking-wider bg-green-500/10 px-3 py-1.5 rounded-lg border border-green-500/20"><i class="fas fa-coins mr-1"></i> Today's Revenue</div>
