@@ -51,31 +51,51 @@
             --bg-color: #FFFFFF;
             --text-color: #111827;
             --text-muted: #4B5563;
-            --card-bg: #F9FAFB;
+            --card-bg: rgba(249, 250, 251, 0.8);
             --border-color: #E5E7EB;
-            --nav-bg: rgba(255, 255, 255, 0.95);
+            --nav-bg: rgba(255, 255, 255, 0.85);
             --hover-highlight: #FF6B00;
+            --glass-bg: rgba(255, 255, 255, 0.4);
+            --glass-border: rgba(229, 231, 235, 0.5);
         }
         
         [data-theme="dark"] {
-            --bg-color: #0A0A0A;
+            --bg-color: #050505;
             --text-color: #F9FAFB;
             --text-muted: #9CA3AF;
-            --card-bg: #171717;
-            --border-color: #262626;
-            --nav-bg: rgba(10, 10, 10, 0.95);
+            --card-bg: rgba(23, 23, 23, 0.6);
+            --border-color: #1A1A1A;
+            --nav-bg: rgba(5, 5, 5, 0.85);
             --hover-highlight: #FF6B00;
+            --glass-bg: rgba(15, 15, 15, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.04);
         }
 
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
-            transition: background-color 0.3s ease, color 0.3s ease;
+            transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             overflow-x: hidden;
             font-weight: 400; 
         }
 
-        /* Utility to temporarily disable transitions during RTL switch */
+        /* Float & Glow Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        @keyframes float-reverse {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(20px) rotate(-5deg); }
+        }
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 0.7; }
+        }
+
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        .animate-float-reverse { animation: float-reverse 8s ease-in-out infinite; }
+
         .no-transition * {
             transition: none !important;
         }
@@ -84,11 +104,66 @@
         .bg-card { background-color: var(--card-bg); border-color: var(--border-color); }
         .border-theme { border-color: var(--border-color); }
 
+        /* Modern Glassmorphic Cards */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            transform: translateY(-8px) scale(1.01);
+            border-color: rgba(255, 107, 0, 0.35);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        [data-theme="dark"] .glass-card:hover {
+            box-shadow: 0 20px 40px rgba(0, 194, 255, 0.05), 0 0 30px rgba(255, 107, 0, 0.1);
+            border-color: rgba(255, 107, 0, 0.3);
+        }
+
+        /* Glowing Orbs */
+        .glow-orb {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+            filter: blur(100px);
+            opacity: 0.5;
+            mix-blend-mode: screen;
+        }
+        .glow-orb-primary {
+            background: radial-gradient(circle, rgba(255, 107, 0, 0.2) 0%, rgba(255, 107, 0, 0) 70%);
+        }
+        .glow-orb-secondary {
+            background: radial-gradient(circle, rgba(0, 194, 255, 0.2) 0%, rgba(0, 194, 255, 0) 70%);
+        }
+
+        /* Premium Buttons */
+        .btn-premium-primary {
+            background: linear-gradient(135deg, #FF6B00 0%, #FF8C00 100%);
+            box-shadow: 0 4px 15px rgba(255, 107, 0, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-premium-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 107, 0, 0.45), 0 0 15px rgba(255, 107, 0, 0.2);
+        }
+        .btn-premium-secondary {
+            background: linear-gradient(135deg, #00C2FF 0%, #00A3D9 100%);
+            box-shadow: 0 4px 15px rgba(0, 194, 255, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-premium-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 194, 255, 0.45), 0 0 15px rgba(0, 194, 255, 0.2);
+        }
+
         /* Clean Navbar */
         .glass-nav {
             background: var(--nav-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--border-color);
         }
 
@@ -184,7 +259,7 @@
                     <span class="font-serif text-2xl font-semibold tracking-tight text-[var(--text-color)] whitespace-nowrap">Air<span class="text-primary">Rush</span></span>
                 </a>
 
-                <div class="hidden 2xl:flex items-center justify-center flex-1 space-x-6 rtl:space-x-reverse px-8">
+                <div class="hidden xl:flex items-center justify-center flex-1 space-x-6 rtl:space-x-reverse px-8">
                     <div class="relative group cursor-pointer py-6 shrink-0">
                         <span class="nav-link active text-primary flex items-center gap-1 font-semibold">Home <i class="fas fa-chevron-down text-xs ml-1 opacity-70"></i></span>
                         <div class="dropdown-menu absolute z-50 top-full ltr:left-0 rtl:right-0 mt-[-10px] w-48 bg-[var(--bg-color)] border border-[var(--border-color)] shadow-xl rounded-xl overflow-hidden">
@@ -212,20 +287,20 @@
                 </div>
 
                 <div class="flex items-center gap-3 shrink-0">
-                    <button type="button" class="rtl-toggle-btn utility-btn hidden 2xl:flex text-xs font-semibold">
+                    <button type="button" class="rtl-toggle-btn utility-btn hidden xl:flex text-xs font-semibold">
                         RTL
                     </button>
 
-                    <button type="button" class="theme-toggle utility-btn hidden 2xl:flex">
+                    <button type="button" class="theme-toggle utility-btn hidden xl:flex">
                         <i class="fas fa-moon text-sm"></i>
                     </button>
 
-                    <div class="hidden 2xl:flex items-center gap-3 shrink-0 ml-2">
+                    <div class="hidden xl:flex items-center gap-3 shrink-0 ml-2">
     <a href="login.html" class="bg-secondary text-white px-5 py-2.5 rounded-lg font-medium hover:bg-[#00A3D9] transition-colors text-sm shadow-sm">Log In</a>
     <a href="register.html" class="bg-primary text-white px-5 py-2.5 rounded-lg font-medium hover:bg-[#E55A00] transition-colors text-sm shadow-sm">Sign Up</a>
 </div>
 
-                    <button type="button" id="mobile-menu-btn" class="utility-btn flex 2xl:hidden w-10 h-10 bg-[var(--bg-color)] border-0 text-[var(--text-color)]">
+                    <button type="button" id="mobile-menu-btn" class="utility-btn flex xl:hidden w-10 h-10 bg-[var(--bg-color)] border-0 text-[var(--text-color)]">
                         <i class="fas fa-bars text-2xl"></i>
                     </button>
                 </div>
@@ -302,37 +377,41 @@
 
     <main class="w-full flex-grow">
 
-        <section class="relative h-[100dvh] min-h-[500px] flex items-center justify-center overflow-hidden bg-[#111]">
-            <img src="Images/mountain.jpg" alt="Hero Background" class="absolute z-0 w-full h-full object-cover opacity-60">
+        <section class="relative min-h-[100dvh] flex items-center justify-center overflow-hidden bg-[#111]">
+            <img src="Images/trampoline_park_hero.png" alt="Hero Background" class="absolute z-0 w-full h-full object-cover opacity-60">
             
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/60 z-0"></div>
             
             <div class="container mx-auto px-4 text-center relative z-10 pt-20">
-                <span class="inline-block py-1 px-3 rounded-full bg-secondary/20 text-secondary border border-secondary/30 font-medium tracking-widest uppercase text-xs mb-6 backdrop-blur-md">
+                <span class="inline-block py-1 px-3 rounded-full bg-secondary/20 text-secondary border border-secondary/30 font-medium tracking-widest uppercase text-xs mb-6 backdrop-blur-md animate-pulse">
                     Experience The Thrill
                 </span>
                 
                 <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-semibold text-white mb-6 leading-tight">
-                    Defy <span class="text-primary">Gravity</span>. <br/> Create Memories.
+                    Defy <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-[#ff8c00] to-secondary font-extrabold">Gravity</span>.&lrm; <br/> Create Memories.&lrm;
                 </h1>
                 
                 <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto font-medium">
-                    The ultimate indoor trampoline park for all ages. Jump, flip, and soar in a world of pure fun.
+                    The ultimate indoor trampoline park for all ages. Jump, flip, and soar in a world of pure fun.&lrm;
                 </p>
                 
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="jump-session.html" class="w-full sm:w-auto bg-primary text-white px-8 py-4 rounded-xl font-medium text-lg hover:bg-[#E55A00] transition-colors shadow-lg shadow-primary/20 flex items-center justify-center gap-2">
+                    <a href="jump-session.html" class="w-full sm:w-auto btn-premium-primary text-white px-8 py-4 rounded-xl font-medium text-lg text-center flex items-center justify-center gap-2">
                         Book Your Jump
                     </a>
-                    <a href="about.html" class="w-full sm:w-auto bg-white text-black px-8 py-4 rounded-xl font-medium text-lg hover:bg-gray-100 transition-colors flex items-center justify-center gap-2">
+                    <a href="about.html" class="w-full sm:w-auto bg-white/15 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-xl font-medium text-lg hover:bg-white/25 hover:border-white/40 transition-all text-center flex items-center justify-center gap-2">
                         Explore Park
                     </a>
                 </div>
             </div>
         </section>
 
-        <section class="py-20 md:py-28 bg-[var(--bg-color)] overflow-hidden border-b border-theme">
-            <div class="container mx-auto px-4 md:px-8">
+        <section class="relative py-20 md:py-28 bg-[var(--bg-color)] overflow-hidden border-b border-theme">
+            <!-- Background Glow Orbs -->
+            <div class="glow-orb glow-orb-primary w-96 h-96 top-10 left-[-100px] animate-float"></div>
+            <div class="glow-orb glow-orb-secondary w-96 h-96 bottom-10 right-[-100px] animate-float-reverse"></div>
+
+            <div class="container mx-auto px-4 md:px-8 relative z-10">
                 <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
                     <div class="max-w-2xl">
                         <span class="text-secondary font-medium tracking-widest uppercase text-xs block mb-2">Discover Attractions</span>
@@ -344,9 +423,9 @@
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="group rounded-2xl overflow-hidden shadow-sm border border-theme hover:shadow-md transition-all duration-300 bg-card">
+                    <div class="group rounded-2xl overflow-hidden glass-card relative z-10">
                         <div class="h-56 overflow-hidden relative">
-                            <img src="Images/Trampoline Arena.jpg" alt="Trampoline Arena" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <img src="Images/trampoline_arena.png" alt="Trampoline Arena" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
                         </div>
                         <div class="p-6">
                             <h3 class="text-xl font-serif font-semibold mb-2 text-[var(--text-color)] group-hover:text-primary transition-colors">Trampoline Arena</h3>
@@ -354,9 +433,9 @@
                         </div>
                     </div>
                     
-                    <div class="group rounded-2xl overflow-hidden shadow-sm border border-theme hover:shadow-md transition-all duration-300 bg-card">
+                    <div class="group rounded-2xl overflow-hidden glass-card relative z-10">
                         <div class="h-56 overflow-hidden relative">
-                            <img src="Images/Foam Pit.jpg" alt="Foam Pit" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <img src="Images/foam_pit.png" alt="Foam Pit" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
                         </div>
                         <div class="p-6">
                             <h3 class="text-xl font-serif font-semibold mb-2 text-[var(--text-color)] group-hover:text-secondary transition-colors">Foam Pit</h3>
@@ -364,9 +443,9 @@
                         </div>
                     </div>
 
-                    <div class="group rounded-2xl overflow-hidden shadow-sm border border-theme hover:shadow-md transition-all duration-300 bg-card">
+                    <div class="group rounded-2xl overflow-hidden glass-card relative z-10">
                         <div class="h-56 overflow-hidden relative">
-                            <img src="Images/Ninja Course.jpg" alt="Ninja Course" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <img src="Images/ninja_course.png" alt="Ninja Course" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
                         </div>
                         <div class="p-6">
                             <h3 class="text-xl font-serif font-semibold mb-2 text-[var(--text-color)] group-hover:text-primary transition-colors">Ninja Course</h3>
@@ -374,9 +453,9 @@
                         </div>
                     </div>
 
-                    <div class="group rounded-2xl overflow-hidden shadow-sm border border-theme hover:shadow-md transition-all duration-300 bg-card">
+                    <div class="group rounded-2xl overflow-hidden glass-card relative z-10">
                         <div class="h-56 overflow-hidden relative">
-                            <img src="Images/Climbing Walls.jpg" alt="Climbing Walls" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <img src="Images/indoor_climbing_wall.png" alt="Climbing Walls" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
                         </div>
                         <div class="p-6">
                             <h3 class="text-xl font-serif font-semibold mb-2 text-[var(--text-color)] group-hover:text-secondary transition-colors">Climbing Walls</h3>
@@ -384,15 +463,71 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="text-center mt-12">
+                    <a href="gallery.html" class="inline-flex btn-premium-primary text-white px-8 py-4 rounded-xl font-semibold text-lg items-center gap-3">
+                        Explore Attractions <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
             </div>
         </section>
 
-        <section class="py-20 md:py-28 bg-card border-b border-theme">
-            <div class="container mx-auto px-4 md:px-8 text-center">
-                <span class="text-primary font-medium tracking-widest uppercase text-xs block mb-2">Our Standards</span>
-                <h2 class="font-serif text-4xl md:text-5xl font-semibold mb-16 text-[var(--text-color)]">Why Choose Us</h2>
+        <section class="relative py-20 md:py-28 bg-card border-b border-theme overflow-hidden">
+            <!-- Background Glow Orb -->
+            <div class="glow-orb glow-orb-secondary w-[450px] h-[450px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-30 animate-pulse-glow"></div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
+            <div class="container mx-auto px-4 md:px-8 relative z-10">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-secondary font-medium tracking-widest uppercase text-xs block mb-2">Jump Programs</span>
+                    <h2 class="font-serif text-4xl md:text-5xl font-semibold text-[var(--text-color)] mb-6">Designed for <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Every Age Group</span></h2>
+                    <p class="text-body-muted text-lg font-medium">From toddlers discovering bounce to seasoned wall-runners, we have specialized sessions and zones tailored to you.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+                    <div class="p-8 rounded-3xl glass-card flex flex-col h-full hover:border-primary">
+                        <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center text-xl mb-6"><i class="fas fa-baby"></i></div>
+                        <h3 class="text-2xl font-serif font-semibold text-[var(--text-color)] mb-3">Toddler Time</h3>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-primary mb-4 block">Ages 0 - 5</span>
+                        <p class="text-body-muted font-medium text-sm mb-6 flex-grow">Safe, dedicated jumping hours for little ones with soft-play obstacles, gentle music, and zero big kids.</p>
+                        <a href="events.html" class="text-primary font-semibold hover:underline mt-auto inline-flex items-center gap-2">View Toddler Hours <i class="fas fa-chevron-right text-xs"></i></a>
+                    </div>
+
+                    <div class="p-8 rounded-3xl glass-card flex flex-col h-full hover:border-secondary">
+                        <div class="w-12 h-12 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center text-xl mb-6"><i class="fas fa-child"></i></div>
+                        <h3 class="text-2xl font-serif font-semibold text-[var(--text-color)] mb-3">Junior Jumpers</h3>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-secondary mb-4 block">Ages 6 - 12</span>
+                        <p class="text-body-muted font-medium text-sm mb-6 flex-grow">Epic dodgeball matches, foam pits, bouldering walls, and interactive game systems built for high-energy fun.</p>
+                        <a href="jump-session.html" class="text-secondary font-semibold hover:underline mt-auto inline-flex items-center gap-2">Book Tickets <i class="fas fa-chevron-right text-xs"></i></a>
+                    </div>
+
+                    <div class="p-8 rounded-3xl glass-card flex flex-col h-full hover:border-primary">
+                        <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center text-xl mb-6"><i class="fas fa-bolt"></i></div>
+                        <h3 class="text-2xl font-serif font-semibold text-[var(--text-color)] mb-3">Teen Flight</h3>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-primary mb-4 block">Ages 13 - 17</span>
+                        <p class="text-body-muted font-medium text-sm mb-6 flex-grow">UV Neon Nights, professional trampoline zones, and challenging ninja courses to test ultimate speed and agility.</p>
+                        <a href="events.html" class="text-primary font-semibold hover:underline mt-auto inline-flex items-center gap-2">Explore Neon Nights <i class="fas fa-chevron-right text-xs"></i></a>
+                    </div>
+
+                    <div class="p-8 rounded-3xl glass-card flex flex-col h-full hover:border-secondary">
+                        <div class="w-12 h-12 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center text-xl mb-6"><i class="fas fa-dumbbell"></i></div>
+                        <h3 class="text-2xl font-serif font-semibold text-[var(--text-color)] mb-3">Adult & Pro</h3>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-secondary mb-4 block">Ages 18+</span>
+                        <p class="text-body-muted font-medium text-sm mb-6 flex-grow">Fitness classes, high-performance Olympic trampolines for gymnastics training, and private corporate group events.</p>
+                        <a href="jump-session.html" class="text-secondary font-semibold hover:underline mt-auto inline-flex items-center gap-2">Book Tickets <i class="fas fa-chevron-right text-xs"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="relative py-20 md:py-28 bg-[var(--bg-color)] border-b border-theme overflow-hidden">
+            <!-- Background Glow Orb -->
+            <div class="glow-orb glow-orb-primary w-96 h-96 top-1/4 right-[-100px] animate-float"></div>
+
+            <div class="container mx-auto px-4 md:px-8 text-center relative z-10">
+                <span class="text-primary font-medium tracking-widest uppercase text-xs block mb-2">Our Standards</span>
+                <h2 class="font-serif text-4xl md:text-5xl font-semibold mb-16 text-[var(--text-color)]">Why <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Choose Us</span></h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto mb-16">
                     <div class="flex flex-col items-center">
                         <div class="w-16 h-16 rounded-2xl bg-secondary/10 text-secondary flex items-center justify-center text-2xl mb-5">
                             <i class="fas fa-shield-halved"></i>
@@ -417,32 +552,41 @@
                         <p class="text-body-muted font-medium px-4">State-of-the-art trampolines with optimized spring systems for maximum bounce.</p>
                     </div>
                 </div>
+
+                <div class="text-center">
+                    <a href="safety.html" class="inline-flex btn-premium-secondary text-white px-8 py-4 rounded-xl font-semibold text-lg items-center gap-3">
+                        <i class="fas fa-file-signature"></i> Sign Safety Waiver
+                    </a>
+                </div>
             </div>
         </section>
 
-        <section class="py-20 md:py-28 bg-[var(--bg-color)] border-b border-theme">
-            <div class="container mx-auto px-4 md:px-8">
+        <section class="relative py-20 md:py-28 bg-[var(--bg-color)] border-b border-theme overflow-hidden">
+            <!-- Background Glow Orb -->
+            <div class="glow-orb glow-orb-secondary w-96 h-96 bottom-10 left-[-100px] animate-float-reverse"></div>
+
+            <div class="container mx-auto px-4 md:px-8 relative z-10">
                 <div class="text-center mb-16">
                     <span class="text-secondary font-medium tracking-widest uppercase text-xs block mb-2">Join The Fun</span>
-                    <h2 class="font-serif text-4xl md:text-5xl font-semibold text-[var(--text-color)]">Upcoming Events</h2>
+                    <h2 class="font-serif text-4xl md:text-5xl font-semibold text-[var(--text-color)]">Upcoming <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Events</span></h2>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                    <div class="p-8 rounded-2xl bg-card border border-theme hover:border-primary transition-colors flex flex-col items-start text-left">
+                    <div class="p-8 rounded-2xl glass-card flex flex-col items-start text-left hover:border-primary">
                         <span class="inline-block bg-[var(--bg-color)] border border-primary/20 text-primary font-medium px-3 py-1 rounded text-xs mb-5">Saturdays, 9 AM</span>
                         <h3 class="text-2xl font-serif font-semibold mb-3 text-[var(--text-color)]">Kids Events</h3>
                         <p class="text-body-muted font-medium mb-6 flex-grow">Special jump hours for toddlers and young children, featuring games, face painting, and mascots.</p>
                         <a href="events.html" class="text-primary font-medium hover:underline underline-offset-4 inline-flex items-center gap-2">Learn More <i class="fas fa-arrow-right text-sm"></i></a>
                     </div>
 
-                    <div class="p-8 rounded-2xl bg-card border border-theme hover:border-secondary transition-colors flex flex-col items-start text-left">
+                    <div class="p-8 rounded-2xl glass-card flex flex-col items-start text-left hover:border-secondary">
                         <span class="inline-block bg-[var(--bg-color)] border border-secondary/20 text-secondary font-medium px-3 py-1 rounded text-xs mb-5">Fridays, 6 PM</span>
                         <h3 class="text-2xl font-serif font-semibold mb-3 text-[var(--text-color)]">Family Nights</h3>
                         <p class="text-body-muted font-medium mb-6 flex-grow">Bring the whole family! Includes pizza deals, laser lights, and music everyone can enjoy.</p>
                         <a href="events.html" class="text-secondary font-medium hover:underline underline-offset-4 inline-flex items-center gap-2">Learn More <i class="fas fa-arrow-right text-sm"></i></a>
                     </div>
 
-                    <div class="p-8 rounded-2xl bg-card border border-theme hover:border-primary transition-colors flex flex-col items-start text-left">
+                    <div class="p-8 rounded-2xl glass-card flex flex-col items-start text-left hover:border-primary">
                         <span class="inline-block bg-[var(--bg-color)] border border-primary/20 text-primary font-medium px-3 py-1 rounded text-xs mb-5">Weekdays</span>
                         <h3 class="text-2xl font-serif font-semibold mb-3 text-[var(--text-color)]">School Trips</h3>
                         <p class="text-body-muted font-medium mb-6 flex-grow">Educational and physical fitness field trips customized for classes and groups of all sizes.</p>
@@ -452,16 +596,171 @@
             </div>
         </section>
 
-        <section class="py-20 md:py-28 bg-card border-b border-theme overflow-hidden">
-            <div class="container mx-auto px-4 md:px-8">
+        <section id="birthday-packages" class="relative py-20 md:py-28 bg-card border-b border-theme overflow-hidden">
+            <!-- Background Glow Orbs -->
+            <div class="glow-orb glow-orb-primary w-[400px] h-[400px] top-1/2 left-[-100px] animate-float"></div>
+            <div class="glow-orb glow-orb-secondary w-[400px] h-[400px] bottom-10 right-[-100px] animate-float-reverse"></div>
+
+            <div class="container mx-auto px-4 md:px-8 relative z-10">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-primary font-semibold tracking-widest uppercase text-xs block mb-3">Party Packages</span>
+                    <h2 class="font-serif text-4xl md:text-5xl font-semibold text-[var(--text-color)] mb-6">Host The Most <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Epic Birthday Party</span></h2>
+                    <p class="text-body-muted text-lg font-medium">Give them a party they'll never forget! Dedicated VIP party suites, a personal host, pizza, drinks, and guaranteed jump times.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <div class="glass-card p-8 rounded-3xl flex flex-col relative hover:border-primary">
+                        <h3 class="text-2xl font-serif font-semibold text-[var(--text-color)] mb-2">Classic Bounce</h3>
+                        <p class="text-body-muted text-sm font-medium mb-6">Perfect for high-flying birthday fun.</p>
+                        <div class="flex items-baseline gap-1 mb-8">
+                            <span class="text-4xl font-serif font-semibold text-[var(--text-color)]">$199</span>
+                            <span class="text-body-muted text-sm font-medium">/ 10 jumpers</span>
+                        </div>
+                        <ul class="space-y-4 mb-8 text-sm font-medium flex-grow">
+                            <li class="flex items-center gap-3 text-body-muted"><i class="fas fa-check text-primary"></i> 60 Min Freestyle Jump Time</li>
+                            <li class="flex items-center gap-3 text-body-muted"><i class="fas fa-check text-primary"></i> 40 Min Private Party Room</li>
+                            <li class="flex items-center gap-3 text-body-muted"><i class="fas fa-check text-primary"></i> Dedicated Party Host</li>
+                            <li class="flex items-center gap-3 text-body-muted"><i class="fas fa-check text-primary"></i> AirRush Safety Jump Socks</li>
+                            <li class="flex items-center gap-3 text-body-muted"><i class="fas fa-check text-primary"></i> 2 Large Pizzas & Soft Drinks</li>
+                        </ul>
+                        <a href="contact.html" class="w-full bg-card border border-theme text-[var(--text-color)] py-3 rounded-xl font-semibold text-center hover:border-primary hover:text-primary transition-colors block">
+                            Plan a Party
+                        </a>
+                    </div>
+
+                    <div class="glass-card p-8 rounded-3xl border-2 border-primary shadow-lg flex flex-col relative transform lg:-translate-y-4 hover:border-primary">
+                        <div class="absolute top-0 right-1/2 transform translate-x-1/2 -translate-y-1/2 bg-primary text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider shadow-md">
+                            Most Popular
+                        </div>
+                        <h3 class="text-2xl font-serif font-semibold text-[var(--text-color)] mb-2">Neon Glow Special</h3>
+                        <p class="text-body-muted text-sm font-medium mb-6">Light up the night under UV blacklights.</p>
+                        <div class="flex items-baseline gap-1 mb-8">
+                            <span class="text-4xl font-serif font-semibold text-[var(--text-color)]">$299</span>
+                            <span class="text-body-muted text-sm font-medium">/ 12 jumpers</span>
+                        </div>
+                        <ul class="space-y-4 mb-8 text-sm font-medium flex-grow">
+                            <li class="flex items-center gap-3 text-body-muted"><i class="fas fa-check text-primary"></i> 90 Min UV Glow Jump Time</li>
+                            <li class="flex items-center gap-3 text-body-muted"><i class="fas fa-check text-primary"></i> 40 Min Private Party Room</li>
+                            <li class="flex items-center gap-3 text-body-muted"><i class="fas fa-check text-primary"></i> Dedicated Party Host</li>
+                            <li class="flex items-center gap-3 text-body-muted"><i class="fas fa-check text-primary"></i> Neon Grip Socks & Glow Favors</li>
+                            <li class="flex items-center gap-3 text-body-muted"><i class="fas fa-check text-primary"></i> 3 Large Pizzas & Unlimited Drinks</li>
+                            <li class="flex items-center gap-3 text-body-muted"><i class="fas fa-check text-primary"></i> Live DJ Weekend Access</li>
+                        </ul>
+                        <a href="contact.html" class="w-full btn-premium-primary text-white py-3 rounded-xl font-semibold text-center block shadow-md">
+                            Plan a Party
+                        </a>
+                    </div>
+
+                    <div class="glass-card p-8 rounded-3xl flex flex-col relative hover:border-secondary">
+                        <h3 class="text-2xl font-serif font-semibold text-[var(--text-color)] mb-2">VIP Adventure Suite</h3>
+                        <p class="text-body-muted text-sm font-medium mb-6">The ultimate VIP luxury experience.</p>
+                        <div class="flex items-baseline gap-1 mb-8">
+                            <span class="text-4xl font-serif font-semibold text-[var(--text-color)]">$449</span>
+                            <span class="text-body-muted text-sm font-medium">/ 15 jumpers</span>
+                        </div>
+                        <ul class="space-y-4 mb-8 text-sm font-medium flex-grow">
+                            <li class="flex items-center gap-3 text-body-muted"><i class="fas fa-check text-primary"></i> Full Park Access (All Active Zones)</li>
+                            <li class="flex items-center gap-3 text-body-muted"><i class="fas fa-check text-primary"></i> Private VIP Luxury Party Suite</li>
+                            <li class="flex items-center gap-3 text-body-muted"><i class="fas fa-check text-primary"></i> 2 Dedicated Party Hosts</li>
+                            <li class="flex items-center gap-3 text-body-muted"><i class="fas fa-check text-primary"></i> Premium Grip Socks & Gift Bags</li>
+                            <li class="flex items-center gap-3 text-body-muted"><i class="fas fa-check text-primary"></i> 4 Large Pizzas & Unlimited Drinks</li>
+                            <li class="flex items-center gap-3 text-body-muted"><i class="fas fa-check text-primary"></i> Custom AirRush Birthday Cake</li>
+                        </ul>
+                        <a href="contact.html" class="w-full bg-card border border-theme text-[var(--text-color)] py-3 rounded-xl font-semibold text-center hover:border-secondary hover:text-secondary transition-colors block">
+                            Plan a Party
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="memberships" class="relative py-20 md:py-28 bg-[var(--bg-color)] border-b border-theme overflow-hidden">
+            <!-- Background Glow Orb -->
+            <div class="glow-orb glow-orb-secondary w-[400px] h-[400px] top-1/4 right-[-100px] animate-float-reverse"></div>
+
+            <div class="container mx-auto px-4 md:px-8 relative z-10">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-secondary font-medium tracking-widest uppercase text-xs block mb-3">Memberships</span>
+                    <h2 class="font-serif text-4xl md:text-5xl font-semibold text-[var(--text-color)] mb-6">Flexible <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Jump Passes & Memberships</span></h2>
+                    <p class="text-body-muted text-lg font-medium">Choose the plan that fits your jumping habits. From single-day passes to unlimited monthly flight, we have options for every jumper.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <div class="glass-card p-8 rounded-3xl flex flex-col hover:border-secondary">
+                        <h3 class="text-2xl font-serif font-semibold text-[var(--text-color)] mb-2">Single Day Pass</h3>
+                        <p class="text-body-muted text-sm font-medium mb-6">Perfect for a one-off gravity-defying session.</p>
+                        <div class="flex items-baseline gap-1 mb-8">
+                            <span class="text-4xl font-serif font-semibold text-[var(--text-color)]">$19</span>
+                            <span class="text-body-muted text-sm font-medium">/ hour</span>
+                        </div>
+                        <ul class="space-y-4 mb-8 text-sm font-medium flex-grow">
+                            <li class="flex items-center gap-3 text-body-muted"><i class="fas fa-check text-secondary"></i> Full Access to Freestyle Arena</li>
+                            <li class="flex items-center gap-3 text-body-muted"><i class="fas fa-check text-secondary"></i> Access to Foam Pit & Ninja Course</li>
+                            <li class="flex items-center gap-3 text-body-muted"><i class="fas fa-check text-secondary"></i> Access to Indoor Climbing Wall</li>
+                            <li class="flex items-center gap-3 text-body-muted-30 opacity-40"><i class="fas fa-times"></i> No discounts on birthday parties</li>
+                        </ul>
+                        <a href="jump-session.html" class="w-full btn-premium-secondary text-white py-3 rounded-xl font-semibold text-center block shadow-md">
+                            <i class="fa-solid fa-calendar-check mr-2"></i> Book Tickets
+                        </a>
+                    </div>
+
+                    <div class="glass-card p-8 rounded-3xl border-2 border-secondary shadow-lg flex flex-col relative transform lg:-translate-y-4 hover:border-secondary">
+                        <div class="absolute top-0 right-1/2 transform translate-x-1/2 -translate-y-1/2 bg-secondary text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider shadow-md">
+                            Best Value
+                        </div>
+                        <h3 class="text-2xl font-serif font-semibold text-[var(--text-color)] mb-2">Monthly Flight Pass</h3>
+                        <p class="text-body-muted text-sm font-medium mb-6">Unleash unlimited jumping every single day.</p>
+                        <div class="flex items-baseline gap-1 mb-8">
+                            <span class="text-4xl font-serif font-semibold text-[var(--text-color)]">$49</span>
+                            <span class="text-body-muted text-sm font-medium">/ month</span>
+                        </div>
+                        <ul class="space-y-4 mb-8 text-sm font-medium flex-grow">
+                            <li class="flex items-center gap-3 text-body-muted"><i class="fas fa-check text-secondary"></i> Unlimited Jump Time (Every Day)</li>
+                            <li class="flex items-center gap-3 text-body-muted"><i class="fas fa-check text-secondary"></i> Free Grip Socks on Sign-Up</li>
+                            <li class="flex items-center gap-3 text-body-muted"><i class="fas fa-check text-secondary"></i> 10% Discount on Birthday Parties</li>
+                            <li class="flex items-center gap-3 text-body-muted"><i class="fas fa-check text-secondary"></i> 15% Discount on Merchandise</li>
+                            <li class="flex items-center gap-3 text-body-muted"><i class="fas fa-check text-secondary"></i> Exclusive Member-Only Events</li>
+                        </ul>
+                        <a href="pricing.html" class="w-full btn-premium-secondary text-white py-3 rounded-xl font-semibold text-center block shadow-md">
+                            <i class="fa-solid fa-calendar-check mr-2"></i> Buy Membership
+                        </a>
+                    </div>
+
+                    <div class="glass-card p-8 rounded-3xl flex flex-col hover:border-primary">
+                        <h3 class="text-2xl font-serif font-semibold text-[var(--text-color)] mb-2">VIP Annual Flight Pass</h3>
+                        <p class="text-body-muted text-sm font-medium mb-6">The ultimate elite pass for 365 days.</p>
+                        <div class="flex items-baseline gap-1 mb-8">
+                            <span class="text-4xl font-serif font-semibold text-[var(--text-color)]">$399</span>
+                            <span class="text-body-muted text-sm font-medium">/ year</span>
+                        </div>
+                        <ul class="space-y-4 mb-8 text-sm font-medium flex-grow">
+                            <li class="flex items-center gap-3 text-body-muted"><i class="fas fa-check text-secondary"></i> Unlimited Jump Time for 365 Days</li>
+                            <li class="flex items-center gap-3 text-body-muted"><i class="fas fa-check text-secondary"></i> 2 Free Guest Passes Every Month</li>
+                            <li class="flex items-center gap-3 text-body-muted"><i class="fas fa-check text-secondary"></i> 20% Discount on Birthday Parties</li>
+                            <li class="flex items-center gap-3 text-body-muted"><i class="fas fa-check text-secondary"></i> Free Socks on Every Single Visit</li>
+                            <li class="flex items-center gap-3 text-body-muted"><i class="fas fa-check text-secondary"></i> Priority Reservation & VIP Lounge Access</li>
+                        </ul>
+                        <a href="pricing.html" class="w-full bg-card border border-theme text-[var(--text-color)] py-3 rounded-xl font-semibold text-center hover:border-primary hover:text-primary transition-colors block">
+                            Buy Membership
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="relative py-20 md:py-28 bg-card border-b border-theme overflow-hidden">
+            <!-- Background Glow Orb -->
+            <div class="glow-orb glow-orb-primary w-[450px] h-[450px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-20 animate-pulse-glow"></div>
+
+            <div class="container mx-auto px-4 md:px-8 relative z-10">
                 <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
                     
                     <div class="w-full lg:w-1/2 relative h-[400px] sm:h-[500px] rounded-3xl z-10 flex-shrink-0">
                         <div class="absolute top-0 ltr:left-0 rtl:right-0 w-[70%] h-[65%] rounded-2xl overflow-hidden border-4 border-[var(--bg-color)] shadow-lg z-20">
-                            <img src="Images/climb.jpg" class="w-full h-full object-cover" alt="Park Action">
+                            <img src="Images/indoor_climbing_wall.png" class="w-full h-full object-cover" alt="Park Action">
                         </div>
                         <div class="absolute bottom-0 ltr:right-0 rtl:left-0 w-[65%] h-[60%] rounded-2xl overflow-hidden border-4 border-[var(--bg-color)] shadow-lg z-10">
-                            <img src="Images/Foam Pit.jpg" class="w-full h-full object-cover" alt="Foam Pit Action">
+                            <img src="Images/foam_pit.png" class="w-full h-full object-cover" alt="Foam Pit Action">
                         </div>
                         
                         <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-28 h-28 bg-secondary rounded-full flex flex-col items-center justify-center z-30 shadow-xl border-4 border-[var(--bg-color)] text-white">
@@ -472,7 +771,7 @@
 
                     <div class="w-full lg:w-1/2 flex flex-col justify-center text-left">
                         <span class="text-primary font-medium tracking-widest uppercase text-xs block mb-3">Premium Experience</span>
-                        <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold mb-6 text-[var(--text-color)] leading-tight">Elevate Your Adventure.</h2>
+                        <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold mb-6 text-[var(--text-color)] leading-tight">Elevate Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary font-extrabold">Adventure</span>.</h2>
                         <p class="text-body-muted text-lg mb-8 font-medium max-w-xl">
                             Step into a world of gravity-defying fun. Our massive indoor park is designed to push your limits while ensuring maximum safety for the whole family.
                         </p>
@@ -492,9 +791,12 @@
                             </li>
                         </ul>
                         
-                        <div>
-                            <a href="about.html" class="inline-flex bg-[var(--text-color)] text-[var(--bg-color)] px-8 py-4 rounded-xl font-medium hover:bg-primary hover:text-white transition-colors items-center gap-3">
+                        <div class="flex flex-col sm:flex-row items-center gap-4">
+                            <a href="about.html" class="inline-flex bg-[var(--text-color)] text-[var(--bg-color)] px-8 py-4 rounded-xl font-medium hover:bg-primary hover:text-white transition-colors items-center gap-3 w-full sm:w-auto justify-center shadow-md">
                                 Discover The Park <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <a href="contact.html" class="inline-flex btn-premium-primary text-white px-8 py-4 rounded-xl font-medium items-center gap-3 w-full sm:w-auto justify-center">
+                                Book a Group Event <i class="fas fa-users"></i>
                             </a>
                         </div>
                     </div>
@@ -503,19 +805,89 @@
             </div>
         </section>
 
+        <section class="relative py-20 md:py-28 bg-card border-b border-theme overflow-hidden">
+            <!-- Background Glow Orb -->
+            <div class="glow-orb glow-orb-secondary w-96 h-96 top-1/4 left-[-100px] animate-float"></div>
+
+            <div class="container mx-auto px-4 md:px-8 relative z-10">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-secondary font-medium tracking-widest uppercase text-xs block mb-3">Testimonials</span>
+                    <h2 class="font-serif text-4xl md:text-5xl font-semibold text-[var(--text-color)] mb-6">What Our <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Jumpers Say</span></h2>
+                    <p class="text-body-muted text-lg font-medium">Hear from parents, event coordinators, and thrill-seekers who have experienced the gravity-defying fun at AirRush.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <div class="glass-card p-8 rounded-3xl flex flex-col justify-between relative hover:border-primary">
+                        <div>
+                            <div class="flex gap-1 text-[#FFB800] mb-6">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="text-[var(--text-color)] font-medium text-lg italic mb-8 leading-relaxed">
+                                "The absolute best birthday party my kids ever had! The party hosts handled everything from setup to clean up, and the kids had a blast in the foam pit and climbing walls. Completely stress-free for us parents!"
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-4 border-t border-theme pt-6">
+                            <div class="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center font-bold text-lg shrink-0">SM</div>
+                            <div>
+                                <h4 class="font-semibold text-[var(--text-color)]">Sarah M.</h4>
+                                <p class="text-body-muted text-xs font-medium">Parent of two</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-8 rounded-3xl flex flex-col justify-between relative hover:border-secondary">
+                        <div>
+                            <div class="flex gap-1 text-[#FFB800] mb-6">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="text-[var(--text-color)] font-medium text-lg italic mb-8 leading-relaxed">
+                                "AirRush has set a new standard for safety and cleanliness. The jump guards are highly attentive, making sure everyone jumps safely. The equipment is modern and the bounce is incredible. 10/10!"
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-4 border-t border-theme pt-6">
+                            <div class="w-12 h-12 bg-secondary/10 text-secondary rounded-full flex items-center justify-center font-bold text-lg shrink-0">MK</div>
+                            <div>
+                                <h4 class="font-semibold text-[var(--text-color)]">Marcus K.</h4>
+                                <p class="text-body-muted text-xs font-medium">Family Jumper</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-8 rounded-3xl flex flex-col justify-between relative hover:border-primary">
+                        <div>
+                            <div class="flex gap-1 text-[#FFB800] mb-6">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="text-[var(--text-color)] font-medium text-lg italic mb-8 leading-relaxed">
+                                "We hosted our annual corporate team-building outing here and it was an absolute blast. The private dodgeball tournament and ninja obstacle courses got everyone moving and laughing. Highly recommend for any group event!"
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-4 border-t border-theme pt-6">
+                            <div class="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center font-bold text-lg shrink-0">JR</div>
+                            <div>
+                                <h4 class="font-semibold text-[var(--text-color)]">Jessica R.</h4>
+                                <p class="text-body-muted text-xs font-medium">HR Event Coordinator</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="py-20 bg-[var(--bg-color)]">
             <div class="container mx-auto px-4 md:px-8">
-                <div class="bg-primary rounded-3xl p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8 shadow-lg">
-                    <div class="text-center md:text-left text-white max-w-2xl">
+                <div class="bg-gradient-to-r from-primary via-[#ff8c00] to-secondary rounded-3xl p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full blur-3xl -z-0"></div>
+                    <div class="text-center md:text-left text-white max-w-2xl relative z-10">
                         <h2 class="font-serif text-3xl md:text-5xl font-semibold mb-4 text-white">Ready to Catch Some Air?</h2>
                         <p class="text-white/90 text-lg font-medium">
                             Skip the line and secure your spot online. Grab your grip socks and get ready for an unforgettable experience.
                         </p>
                     </div>
 
-                    <div class="flex-shrink-0">
-                        <a href="jump-session.html" class="bg-white text-primary font-semibold px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors shadow-md text-lg flex items-center justify-center gap-3">
-                            <i class="fas fa-ticket"></i> Reserve Tickets
+                    <div class="flex-shrink-0 relative z-10">
+                        <a href="jump-session.html" class="bg-white text-primary hover:text-[#ff6b00] font-semibold px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors shadow-xl text-lg flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-calendar-check"></i> Book Tickets
                         </a>
                     </div>
                 </div>
